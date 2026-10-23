@@ -3,76 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panzerkeil Support</title>
-<meta name="description" content="Help and contact for Panzerkeil, a turn-based WWII hex wargame for iPhone and iPad.">
+<title>Panzerkeil · WWII Strategy for iPhone and iPad</title>
+<meta name="description" content="Panzerkeil is a turn-based hex wargame of the Second World War for iPhone and iPad. Command the Wehrmacht, the Western Allies or the Red Army across 48 battles on hand-drawn operational maps.">
+<meta property="og:title" content="Panzerkeil · WWII Strategy for iPhone and iPad">
+<meta property="og:description" content="A turn-based hex wargame. Three campaigns, 48 battles, your own commander and an army that remembers every fight.">
+<meta property="og:image" content="assets/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icon-180.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="theme-color" content="#e9dfc7">
 <style>
 :root {
   --paper: #e9dfc7;
+  --paper-2: #e1d5b8;
+  --card: #f2ead6;
   --ink: #28241e;
+  --ink-soft: rgba(40, 36, 30, 0.68);
   --brass: #b08630;
   --olive: #4a5240;
+  --red: #8b3a34;
+  --line: rgba(40, 36, 30, 0.14);
+  --shadow: 0 18px 40px rgba(40, 30, 15, 0.22);
 }
 @media (prefers-color-scheme: dark) {
-  :root { --paper: #1f1c17; --ink: #ece4d0; --brass: #c99a3e; --olive: #b9c2a8; }
+  :root {
+    --paper: #1d1a15; --paper-2: #24201a; --card: #2a251e; --ink: #ece4d0;
+    --ink-soft: rgba(236, 228, 208, 0.7); --brass: #c99a3e; --olive: #b9c2a8;
+    --red: #d07a70; --line: rgba(236, 228, 208, 0.14); --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  }
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font: 17px/1.55 Georgia, "Baskerville", serif;
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.6 Georgia, "Baskerville", "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
 }
-main { max-width: 680px; margin: 0 auto; padding: 48px 16px 64px; }
-.kicker {
-  font: 600 11px/1 -apple-system, "Helvetica Neue", sans-serif;
-  letter-spacing: 0.25em; text-transform: uppercase; opacity: 0.6; margin: 0;
-}
-h1 {
-  font: 800 44px/1.1 -apple-system, "Helvetica Neue", sans-serif;
-  letter-spacing: 0.06em; margin: 10px 0 0;
-}
-.rule { width: 60px; height: 3px; background: var(--brass); margin: 16px 0 20px; }
-.lede { font-style: italic; font-size: 19px; color: var(--olive); }
-h2 {
-  font: 700 13px/1.2 -apple-system, "Helvetica Neue", sans-serif;
-  letter-spacing: 0.18em; text-transform: uppercase; margin: 36px 0 8px; opacity: 0.75;
-}
-h3 { font: 600 17px/1.3 -apple-system, "Helvetica Neue", sans-serif; margin: 22px 0 4px; }
+img { max-width: 100%; display: block; }
 a { color: var(--brass); }
-ul { padding-left: 1.2em; }
-.foot { margin-top: 48px; font-size: 14px; opacity: 0.7; }
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.kicker {
+  font: 700 11px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink-soft); margin: 0;
+}
+.rule { width: 64px; height: 3px; background: var(--brass); margin: 18px 0 22px; }
+h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: 0.02em; margin: 10px 0 0; }
+.lede { font-style: italic; font-size: clamp(18px, 2.2vw, 21px); color: var(--olive); max-width: 640px; }
+
+/* Nav */
+nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink);
+         font: 800 15px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; letter-spacing: 0.16em; }
+.brand img { width: 30px; height: 30px; border-radius: 7px; }
+.links { display: flex; gap: 22px; }
+.links a { color: var(--ink-soft); text-decoration: none; font: 600 14px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+.links a:hover { color: var(--ink); }
+@media (max-width: 640px) { .links a.optional { display: none; } .links { gap: 16px; } }
+
+/* Hero */
+.hero { padding: 64px 0 40px; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(48px, 7vw, 84px); line-height: 0.95; font-weight: 900; letter-spacing: 0.05em; margin: 14px 0 0; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; align-items: center; }
+.badge {
+  display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 14px;
+  background: var(--ink); color: var(--paper); text-decoration: none;
+  font: 600 15px/1.15 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+.badge small { display: block; font-size: 11px; font-weight: 500; opacity: 0.75; letter-spacing: 0.04em; }
+.badge svg { width: 24px; height: 24px; fill: currentColor; }
+.ghost { color: var(--ink); font: 600 15px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; text-decoration: none;
+         padding: 13px 18px; border-radius: 14px; border: 1px solid var(--line); }
+.facts { display: flex; gap: 28px; margin-top: 30px; flex-wrap: wrap; }
+.facts div { font: 800 26px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+.facts span { display: block; margin-top: 6px; font: 700 10px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+              letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); }
+.device { position: relative; }
+.device .tablet { border-radius: 26px; border: 10px solid #16130f; box-shadow: var(--shadow); background: #16130f; }
+.device .tablet img { border-radius: 16px; }
+.device .phone { position: absolute; width: 34%; right: -4%; bottom: -8%; border-radius: 30px; border: 7px solid #16130f;
+                 box-shadow: var(--shadow); background: #16130f; }
+.device .phone img { border-radius: 22px; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .device { margin: 10px 4% 40px 0; }
+}
+
+section { padding: 72px 0; }
+section.alt { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* Campaigns */
+.campaigns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+.campaign { background: var(--card); border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(40, 30, 15, 0.08); }
+.campaign img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+.campaign .body { padding: 18px 20px 22px; border-top: 5px solid var(--side); }
+.campaign h3 { margin: 0; font-size: 21px; }
+.campaign .route { font-style: italic; color: var(--olive); margin: 2px 0 10px; }
+.campaign p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+.campaign .meta { margin-top: 12px; font: 700 11px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: var(--side); }
+@media (max-width: 860px) { .campaigns { grid-template-columns: 1fr; } }
+
+/* Features */
+.features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 28px; margin-top: 36px; }
+.feature { display: grid; grid-template-columns: 92px 1fr; gap: 18px; align-items: start; padding: 18px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); }
+.feature img { width: 92px; height: 70px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.18)); }
+.feature h3 { margin: 2px 0 4px; font-size: 18px; }
+.feature p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+@media (max-width: 760px) { .features { grid-template-columns: 1fr; } .feature { grid-template-columns: 70px 1fr; } .feature img { width: 70px; height: 56px; } }
+
+/* Screenshots */
+.shots { display: flex; gap: 22px; overflow-x: auto; padding: 30px 16px 26px; scroll-snap-type: x mandatory; }
+.shots figure { margin: 0; flex: 0 0 auto; width: 240px; scroll-snap-align: center; }
+.shots img { border-radius: 26px; border: 6px solid #16130f; background: #16130f; box-shadow: 0 10px 26px rgba(40, 30, 15, 0.22); }
+.shots figcaption { margin-top: 12px; text-align: center; font: 600 13px/1.3 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--ink-soft); }
+
+/* War map band */
+.band { position: relative; min-height: 360px; display: grid; place-items: center; text-align: center;
+        background: url("assets/war-map.jpg") center / cover; }
+.band::before { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--paper), color-mix(in srgb, var(--paper) 55%, transparent) 30%, color-mix(in srgb, var(--paper) 55%, transparent) 70%, var(--paper)); }
+.band .wrap { position: relative; }
+.band .lede { margin: 0 auto; }
+
+/* Support */
+.support { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 30px; }
+.support div { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+.support h3 { margin: 0 0 6px; font-size: 18px; }
+.support p { margin: 0 0 10px; font-size: 15px; color: var(--ink-soft); }
+@media (max-width: 760px) { .support { grid-template-columns: 1fr; gap: 18px; } }
+
+footer { padding: 36px 0 48px; border-top: 1px solid var(--line); font: 14px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--ink-soft); }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--ink-soft); }
 </style>
 </head>
 <body>
-<main>
-  <p class="kicker">The Second World War · 1939 – 1945</p>
-  <h1>Panzerkeil</h1>
-  <div class="rule"></div>
-  <p class="lede">A turn-based hex wargame for iPhone and iPad. Command the Wehrmacht, the Western Allies or the Red Army across 48 battles.</p>
 
-  <h2>Contact</h2>
-  <p>Questions, bug reports and suggestions: <a href="mailto:levihopper+panzerkeil@gmail.com">levihopper+panzerkeil@gmail.com</a>. Please include your device model, iOS version and, for a bug, the battle and turn where it happened.</p>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/icon-180.png" alt="">PANZERKEIL</a>
+    <div class="links">
+      <a class="optional" href="#campaigns">Campaigns</a>
+      <a class="optional" href="#features">Features</a>
+      <a class="optional" href="#screens">Screens</a>
+      <a href="#support">Support</a>
+    </div>
+  </div>
+</nav>
 
-  <h2>Common questions</h2>
-  <h3>How do I start a different campaign?</h3>
-  <p>On the title screen, tap the campaign you want (Axis, Western Allies or Red Army), then New Campaign or Continue Campaign. Each campaign keeps its own save.</p>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="kicker">The Second World War · 1939 – 1945</p>
+      <h1>PANZERKEIL</h1>
+      <div class="rule"></div>
+      <p class="lede">A turn-based hex wargame for iPhone and iPad. Command the Wehrmacht, the Western Allies or the Red Army across 48 battles on hand-drawn operational maps.</p>
+      <div class="cta">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+          <span><small>Coming soon to the</small>App Store</span>
+        </span>
+        <a class="ghost" href="#features">See what's inside</a>
+      </div>
+      <div class="facts">
+        <div>3<span>Campaigns</span></div>
+        <div>48<span>Battles</span></div>
+        <div>126<span>Unit types</span></div>
+      </div>
+    </div>
+    <div class="device" aria-hidden="true">
+      <div class="tablet"><img src="assets/ipad-map.jpg" alt=""></div>
+      <div class="phone"><img src="assets/phone-12_commander.jpg" alt=""></div>
+    </div>
+  </div>
+</header>
 
-  <h3>What do the difficulty levels change?</h3>
-  <p><strong>Easy:</strong> the enemy fields four-fifths of its strength and makes more mistakes. <strong>Normal:</strong> the battles as written. <strong>Hard:</strong> every enemy unit is a grade more experienced, the enemy plays carefully, and victories pay less prestige.</p>
+<section class="alt" id="campaigns">
+  <div class="wrap">
+    <p class="kicker">Choose your side</p>
+    <h2>Three wars in one</h2>
+    <p class="lede">How you win decides where the war goes next: a fast, decisive victory opens a different road through the campaign, and a defeat sends you down a harder one.</p>
+    <div class="campaigns">
+      <article class="campaign" style="--side:#4f5a50">
+        <img src="assets/campaign-axis.jpg" alt="The Fall Weiss battle map" loading="lazy">
+        <div class="body">
+          <h3>The Axis</h3>
+          <p class="route">Poland to Berlin</p>
+          <p>From the first days of September 1939 to the last stand in the Reich, and a what-if road to Washington for the boldest commanders.</p>
+          <p class="meta">1939 – 1945 · 23 battles</p>
+        </div>
+      </article>
+      <article class="campaign" style="--side:#94753a">
+        <img src="assets/campaign-west.jpg" alt="A North African desert battle map" loading="lazy">
+        <div class="body">
+          <h3>The Western Allies</h3>
+          <p class="route">Dunkirk to the Elbe</p>
+          <p>The British and Americans from the beaches of Dunkirk through the desert, Italy and Normandy to the Rhine and the race for Berlin.</p>
+          <p class="meta">1940 – 1945 · 13 battles</p>
+        </div>
+      </article>
+      <article class="campaign" style="--side:#963428">
+        <img src="assets/campaign-east.jpg" alt="The Stalingrad battle map" loading="lazy">
+        <div class="body">
+          <h3>The Red Army</h3>
+          <p class="route">From the frontier to the Reichstag</p>
+          <p>Survive 1941, hold Moscow and Stalingrad, then turn the tide at Kursk and drive the long road west to Berlin.</p>
+          <p class="meta">1941 – 1945 · 12 battles</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <h3>Why did my veteran unit drop a grade?</h3>
-  <p>Refitting with free recruits brings in new men, which lowers a unit's experience. Refitting with veterans costs prestige but keeps the grade. Headquarters warns you before recruits lower a grade.</p>
+<section id="features">
+  <div class="wrap">
+    <p class="kicker">What's inside</p>
+    <h2>Built for the long war</h2>
+    <div class="features">
+      <div class="feature"><img src="assets/unit-ger_panzer_iv.png" alt=""><div><h3>Become the commander</h3><p>Create yourself and rise from Major to Field Marshal. Levels bring attributes that strengthen the whole army; Command Points unlock tactics such as an artillery barrage, air superiority or winter gear.</p></div></div>
+      <div class="feature"><img src="assets/unit-ger_sdkfz222.png" alt=""><div><h3>Your commander works while you're away</h3><p>Post them to study historical battles, study the enemy's weaknesses or train troops. Chapters of the Field Manual unlock advice on the battlefield itself.</p></div></div>
+      <div class="feature"><img src="assets/unit-ger_88mm.png" alt=""><div><h3>Every attack shows its maths</h3><p>Before you commit, the preview shows attack and defence, every modifier from terrain to experience, and the losses each side can expect.</p></div></div>
+      <div class="feature"><img src="assets/unit-brit_infantry_43.png" alt=""><div><h3>An army that remembers</h3><p>Your core units carry their experience, names and medals from battle to battle, from Green recruits to Guards. Lose a veteran and it's gone for good.</p></div></div>
+      <div class="feature"><img src="assets/unit-sov_il2.png" alt=""><div><h3>Weather and fog of war</h3><p>Rain and snow slow the advance, mud grounds the air force, and with fog of war on you see only what your units can see.</p></div></div>
+      <div class="feature"><img src="assets/unit-usa_sherman.png" alt=""><div><h3>Stars and a Weekly Operation</h3><p>Three stars to earn in every battle, and a new operation each week with its own twist and a Game Center leaderboard.</p></div></div>
+      <div class="feature"><img src="assets/unit-sov_is2.png" alt=""><div><h3>Twenty-four achievements</h3><p>From your first victory to every front won, plus a war map of your campaign and a battle report to share.</p></div></div>
+      <div class="feature"><img src="assets/unit-brit_firefly.png" alt=""><div><h3>Plays offline. No ads, no tracking.</h3><p>One purchase, everything included. Saves sync through your own iCloud account between iPhone and iPad.</p></div></div>
+    </div>
+  </div>
+</section>
 
-  <h3>Where are my saves?</h3>
-  <p>On your device, and, if iCloud sync is on (Settings in the game), in your own iCloud account so a campaign begun on your iPhone carries on on your iPad. The newest save wins. The game has no accounts of its own.</p>
+<div class="band">
+  <div class="wrap">
+    <p class="kicker">Europe and North Africa · 1939 – 1945</p>
+    <h2>Follow your war across the map</h2>
+    <p class="lede">Every battle you fight is marked on the campaign map, with the roads still ahead of you.</p>
+  </div>
+</div>
 
-  <h3>Where are the achievements?</h3>
-  <p>Tap Awards on the title screen. If you are signed in to Game Center (Settings › Game Center), achievements also appear in your Game Center profile; anything earned while signed out is sent the next time you sign in.</p>
+<section class="alt" id="screens">
+  <div class="wrap">
+    <p class="kicker">On iPhone and iPad</p>
+    <h2>A look at the game</h2>
+  </div>
+  <div class="shots" role="list">
+    <figure role="listitem"><img src="assets/phone-02_map.jpg" alt="The Barbarossa battle map" loading="lazy"><figcaption>Hand-drawn operational maps</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-12_commander.jpg" alt="The Commander page" loading="lazy"><figcaption>Your own commander</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-04_odds.jpg" alt="The attack preview" loading="lazy"><figcaption>Know the odds</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-13_tactics.jpg" alt="Choosing a tactic" loading="lazy"><figcaption>Tactics that turn battles</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-14_victory.jpg" alt="A decisive victory with three stars" loading="lazy"><figcaption>Earn your stars</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-15_weekly.jpg" alt="Quick Battle and the Weekly Operation" loading="lazy"><figcaption>A new operation every week</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-16_warmap.jpg" alt="The campaign war map" loading="lazy"><figcaption>The war map</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-08_hq.jpg" alt="Headquarters" loading="lazy"><figcaption>Refit and reinforce</figcaption></figure>
+    <figure role="listitem"><img src="assets/phone-10_west.jpg" alt="A Western Allies battle in the desert" loading="lazy"><figcaption>The desert war</figcaption></figure>
+  </div>
+</section>
 
-  <h3>The text is too small or too large.</h3>
-  <p>Panzerkeil follows the text size set in Settings › Display &amp; Brightness › Text Size, and honours Reduce Motion in Settings › Accessibility › Motion.</p>
+<section id="support">
+  <div class="wrap">
+    <p class="kicker">Support</p>
+    <h2>Questions and help</h2>
+    <div class="support">
+      <div>
+        <h3>Contact</h3>
+        <p>Questions, bug reports and suggestions are welcome at <a href="mailto:levihopper+panzerkeil@gmail.com">levihopper+panzerkeil@gmail.com</a>.</p>
+        <p>For a bug, please include your device, iOS version, and the battle and turn where it happened.</p>
+      </div>
+      <div>
+        <h3>Common questions</h3>
+        <p>Starting a different campaign, difficulty levels, saves and iCloud, achievements, postings and the Field Manual.</p>
+        <p><a href="support.html">Read the full help page</a> · <a href="privacy.html">Privacy policy</a></p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <p class="foot"><a href="privacy.html">Privacy policy</a></p>
-</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Michael Hopper. Panzerkeil is a game about the history of the Second World War.</span>
+    <span><a href="support.html">Help</a> · <a href="privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
