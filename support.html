@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/site.css?v=0e6cef2579">
 <title>Panzerkeil Help</title>
 <meta name="description" content="Help and contact for Panzerkeil, a turn-based WWII hex wargame for iPhone and iPad.">
 <link rel="icon" href="assets/icon-180.png">
@@ -26,8 +27,24 @@ a { color: var(--brass); }
 </style>
 </head>
 <body>
-<main>
-  <a class="back" href="index.html">‹ Panzerkeil</a>
+<a class="skip" href="#main">Skip to content</a>
+<!-- build_site:nav -->
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon-180.png" alt="" width="30" height="30"><span>PANZERKEIL</span></a>
+    <div class="links">
+      <a href="index.html#gameplay">Gameplay</a>
+      <a href="units.html">Your Army</a>
+      <a href="armoury.html">Armoury</a>
+      <a href="guide.html">How to Play</a>
+      <a href="campaigns.html">Campaigns</a>
+      <a href="leaderboards.html">Leaderboards</a>
+      <a href="support.html" aria-current="page">Help</a>
+    </div>
+  </div>
+</nav>
+<!-- /build_site:nav -->
+<main id="main">
   <p class="kicker">Help</p>
   <h1>Questions and answers</h1>
   <div class="rule"></div>
@@ -57,7 +74,7 @@ a { color: var(--brass); }
   <p>Yes, one a turn, from the Supply view: a quarter dearer than at headquarters, delivered Green to a town your supply reaches with no enemy beside it, at a railhead by your next turn, elsewhere a turn later. In a campaign it needs a free slot in your army and stays with it afterwards; in a single battle you can only make up your losses. The enemy can call up units too.</p>
 
   <h3>Is there fog of war?</h3>
-  <p>Yes: you see only what your units can, and so does the enemy. It is chosen with the difficulty when a campaign or battle begins: always on for Hard, on to begin with for Normal, off to begin with for Easy.</p>
+  <p>Yes: you see only what your units can, and so does the enemy. It is chosen with the difficulty when a campaign or battle begins: always on for Hard, on to begin with for Normal, off to begin with for Easy. Battle Mode matches are always fought under fog; Scenario matches never are.</p>
 
   <h3>Can more than one person play on the same device?</h3>
   <p>Yes. Up to three commanders can share a device, each with their own career, campaigns, quick battles and stars. Change commander from the Commander page (the people button at the top). Settings, achievements and multiplayer belong to the device and its Game Center account.</p>
@@ -89,20 +106,20 @@ a { color: var(--brass); }
   <p>Game Center sends your friend the invitation when the turn first reaches them: straight away if their side moves first, otherwise once you end your first turn. The notification opens Panzerkeil (or its App Store page), where the match waits under Invitations to accept or decline.</p>
 
   <h3>Can we talk during a match?</h3>
-  <p>You can send one short set message with each turn (such as "Good luck!" or "Well played."), shown to your opponent when they open the match. If they have been quiet for a while, swipe the match and tap Nudge to send a reminder, at most once every 12 hours.</p>
+  <p>Tap Chat to talk with your opponent at any time, during your turn or theirs; they get a notification, and set messages such as "Good luck!" are a tap away. Messages are filtered: touch and hold one to report it, or block the player from the chat's menu. Chat can be turned off in Settings. If your opponent has been quiet for a while, swipe the match and tap Nudge to send a reminder, at most once every 12 hours.</p>
 
   <h3>Where are my results?</h3>
   <p>Your record sits at the top of the match list: won and lost, win rate and current run. Tap it for your results against each opponent and every finished match. It is kept on your device and in iCloud, so it lasts after a match is removed. Wins also count on the Multiplayer Wins leaderboard in Game Center.</p>
 
   <h3>Is it fair?</h3>
-  <p>Each commander brings the tactics they have chosen, but commander attribute bonuses and campaign medals are off, so experience buys choices, not stronger units. The historical battles are as unequal as history made them: pick the side that suits you.</p>
+  <p>Each commander brings the tactics they have chosen, but commander attribute bonuses and campaign medals are off, so experience buys choices, not stronger units. The historical battles are as unequal as history made them, so each is labelled Even, or Favoured against a Challenge, and the harder side pays extra Command Points. In Battle Mode both sides field the same points.</p>
 
   <h2>Saves and achievements</h2>
   <h3>Where are my saves?</h3>
   <p>On your device and, if iCloud sync is on (Settings in the game), in your own iCloud account, so a campaign begun on your iPhone carries on on your iPad. The newest save wins. The game has no accounts of its own.</p>
 
   <h3>Where are the achievements?</h3>
-  <p>Tap Awards on the title screen. If you are signed in to Game Center, achievements and the Weekly Operation leaderboard also appear there; anything earned while signed out is sent the next time you sign in.</p>
+  <p>Tap Awards on the title screen. If you are signed in to Game Center, achievements and the leaderboards also appear there (Leaderboards is on the title screen); anything earned while signed out is sent the next time you sign in.</p>
 
   <h2>Accessibility</h2>
   <h3>The text is too small or too large.</h3>

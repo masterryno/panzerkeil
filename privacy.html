@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/site.css?v=0e6cef2579">
 <title>Panzerkeil Privacy</title>
 <meta name="description" content="Privacy policy for Panzerkeil. The app collects no data.">
 <style>
@@ -44,18 +45,35 @@ ul { padding-left: 1.2em; }
 </style>
 </head>
 <body>
-<main>
+<a class="skip" href="#main">Skip to content</a>
+<!-- build_site:nav -->
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon-180.png" alt="" width="30" height="30"><span>PANZERKEIL</span></a>
+    <div class="links">
+      <a href="index.html#gameplay">Gameplay</a>
+      <a href="units.html">Your Army</a>
+      <a href="armoury.html">Armoury</a>
+      <a href="guide.html">How to Play</a>
+      <a href="campaigns.html">Campaigns</a>
+      <a href="leaderboards.html">Leaderboards</a>
+      <a href="support.html">Help</a>
+    </div>
+  </div>
+</nav>
+<!-- /build_site:nav -->
+<main id="main">
   <p class="kicker">Panzerkeil</p>
   <h1>Privacy Policy</h1>
   <div class="rule"></div>
-  <p class="lede">Panzerkeil does not collect, store or share any personal data.</p>
+  <p class="lede">Panzerkeil tracks no one and collects almost nothing. The one thing it shares, unless you switch it off, is your film of each Daily and Weekly Operation battle and your record in them, beside your Game Center score.</p>
 
   <h2>What the app does not do</h2>
   <ul>
     <li>No accounts or sign-in.</li>
     <li>No analytics, crash reporting or tracking of any kind.</li>
     <li>No advertising and no advertising identifiers.</li>
-    <li>No servers of our own: every battle plays offline, and multiplayer goes through Apple's Game Center.</li>
+    <li>No servers of our own: every battle plays offline, multiplayer goes through Apple's Game Center, and shared Daily and Weekly Operation films are kept in Apple's iCloud (CloudKit).</li>
     <li>No third-party code that collects data.</li>
   </ul>
 
@@ -64,16 +82,23 @@ ul { padding-left: 1.2em; }
   <p>If iCloud sync is on (it is unless you switch it off in the game's Settings), the saves, commander, stars, achievement progress, Quick Battle results and paint scheme are also kept in your own iCloud account so your other devices can use them. That is Apple's storage under your account; we cannot see it. Deleting the app deletes the copies on that device.</p>
 
   <h2>Game Center</h2>
-  <p>If you are signed in to Apple's Game Center, the achievements you earn are sent to Game Center so they appear in your Game Center profile, and your Weekly Operation scores are posted to its leaderboard, where other players can see them beside your Game Center name. That is handled by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>; we receive nothing from it. If you are not signed in, nothing is sent to Game Center.</p>
+  <p>If you are signed in to Apple's Game Center, the achievements you earn are sent to Game Center so they appear in your Game Center profile, and your Daily and Weekly Operation scores are posted to its leaderboards, with how each score was made (stars, turns to spare, units destroyed and lost, and difficulty), where other players can see them beside your Game Center name. That is handled by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>; we receive nothing from it. If you are not signed in, nothing is sent to Game Center.</p>
+
+  <h2>Daily and Weekly Operation films</h2>
+  <p>When you win the Daily or Weekly Operation while signed in to Game Center and iCloud, the game shares a film of that battle (where each unit stood and who held each town, turn by turn), the battle's name, your score and the result, so other players can watch it beside your score on that operation's leaderboard. Only your best score of the day or week is shared. It is kept in Apple's CloudKit public database for Panzerkeil under your Game Center player ID, with Game Center's signature showing it is yours. Apple's CloudKit also records when it was saved and an anonymous iCloud ID that belongs to this app alone. Your name on the leaderboard comes from Game Center, not from the film; no name, device details or location are sent. Your device removes your films of past days as you share new ones. Otherwise the films stay until you switch sharing off in the game's Settings › Game Center (on any of your devices), which takes all of them down, at once or the next time you are online and signed in. Films are never shared for players under age. We can see the films as the game's developer, as anyone can, and use them only to run this feature.</p>
+
+  <h2>Daily and Weekly service record</h2>
+  <p>The game keeps a record of your Daily and Weekly Operations: the days and weeks you played and won, the battle, your score, and your place on each board once it has closed, which it reads from Game Center. It is kept on your device and, if iCloud sync is on, in your own iCloud account. Unless you switch sharing off, these figures (your totals and your latest results, with each day's or week's battle, score and place) are also kept in Apple's CloudKit public database for Panzerkeil under your Game Center player ID, with Game Center's signature showing they are yours, so other players can see them when they tap your score. Apple's CloudKit also records when they were saved and an anonymous iCloud ID that belongs to this app alone. They carry no name, device details or location. Switching sharing off in the game's Settings › Game Center takes them down along with your films; a device with iCloud sync off has to be switched off itself, and anything saved under a different iCloud account can only be removed while signed in to that account.</p>
 
   <h2>Multiplayer</h2>
-  <p>If you play against another person, Apple's Game Center carries the match between your devices. Your opponent sees your Game Center name, the commander name you chose, the tactics you take into the battle and every move you make in it, and any of the game's set messages you send with a turn (there is no free text). Nothing passes through any server of ours. Your record of finished matches (opponents' Game Center names and the results) is kept on your device and, if iCloud sync is on, in your own iCloud account. Matches you remove from your list are removed from Game Center for you.</p>
+  <p>If you play against another person, Apple's Game Center carries the match between your devices. Your opponent sees your Game Center name, the commander name you chose, the names and emblems you give the units of your Battle Group, the tactics you take into the battle and every move you make in it, and any of the game's set messages you send with a turn.</p>
+  <p>In matches begun on version 1.2.2 or later you can also chat with your opponent. Chat messages travel between your two devices through Apple's iCloud, sealed with a key only the two of you hold, and are deleted from iCloud once the match is over. They are kept on your devices so the conversation shows when you reopen the match; the latest are also carried with the match itself on Game Center until it ends. If Game Center will not close a finished match, its result goes to your opponent's device the same way, sealed, until they have it. Apple's CloudKit also records when each was saved and an anonymous iCloud ID that belongs to this app alone. We never see them. Messages are filtered for offensive words on both devices. You can switch chat off in Settings, block a player (their messages are hidden and their invitations turned down) and report a message: a report is an email you send us yourself from your Mail app, with the message and the player's Game Center name and ID filled in, which we use only to look into it. Chat is not offered where Screen Time or Game Center restricts communication, or to players under age. Nothing passes through any server of ours. Your record of finished matches (opponents' Game Center names and the results) is kept on your device and, if iCloud sync is on, in your own iCloud account. Matches you remove from your list are removed from Game Center for you.</p>
 
   <h2>Notifications</h2>
-  <p>The game asks permission to send notifications only if you switch on Study reminders in its Settings, or when you start or join your first multiplayer match. Study reminders are made on your device. Multiplayer turn notifications, and reminders your opponent sends with Nudge, are sent by Game Center. You can turn either off at any time in Settings › Notifications.</p>
+  <p>The game asks permission to send notifications only if you switch on Study or Drill reminders in its Settings, when you first put a Battle Group unit to drill, or when you start or join your first multiplayer match. Study reminders are made on your device. Multiplayer turn and chat notifications, and reminders your opponent sends with Nudge, are sent by Game Center; a chat notification says who wrote, not what. The app's icon shows how many matches are waiting for your move. You can turn either off at any time in Settings › Notifications.</p>
 
   <h2>Children</h2>
-  <p>Because the app collects no data from anyone, it collects none from children.</p>
+  <p>Daily and Weekly Operation films and service records are never shared for players Game Center marks as under age, so the app collects nothing from them.</p>
 
   <h2>Changes</h2>
   <p>If a future version ever changed any of this, this page would be updated before that version was released, and the App Store privacy details would change with it.</p>
@@ -81,7 +106,7 @@ ul { padding-left: 1.2em; }
   <h2>Contact</h2>
   <p><a href="mailto:levihopper+panzerkeil@gmail.com">levihopper+panzerkeil@gmail.com</a></p>
 
-  <p class="foot">Last updated 25 October 2026 · <a href="index.html">Support</a></p>
+  <p class="foot">Last updated 29 October 2026 · <a href="index.html">Support</a></p>
 </main>
 </body>
 </html>
