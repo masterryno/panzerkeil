@@ -3,19 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panzerkeil · WWII Strategy for iPhone and iPad</title>
-<meta name="description" content="Panzerkeil is a turn-based hex wargame of the Second World War for iPhone and iPad. Command the Wehrmacht, the Western Allies or the Red Army across 48 battles on hand-drawn operational maps.">
-<meta property="og:title" content="Panzerkeil · WWII Strategy for iPhone and iPad">
-<meta property="og:description" content="A turn-based hex wargame. Three campaigns, 48 battles, your own commander and an army that remembers every fight.">
+<title>Panzerkeil · Lead your own army through the Second World War</title>
+<meta name="description" content="Panzerkeil is a turn-based hex wargame of the Second World War for iPhone, iPad, Mac and Apple TV. Build an army of your own and lead it through 48 battles. Free to start.">
+<meta property="og:title" content="Panzerkeil · Lead your own army through the Second World War">
+<meta property="og:description" content="Three campaigns, 48 battles, an army that remembers every fight, and Battle Mode against other players. Free to start on iPhone, iPad, Mac and Apple TV.">
 <meta property="og:image" content="assets/og.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/icon-180.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
-<meta name="theme-color" content="#e9dfc7">
-<link rel="stylesheet" href="assets/site.css?v=0e6cef2579">
+<meta name="theme-color" content="#0f0e0b">
+<link rel="preload" as="image" href="assets/home/hero-1.jpg" imagesrcset="assets/home/hero-s-1.jpg 1100w, assets/home/hero-1.jpg 2400w" imagesizes="100vw">
+<link rel="stylesheet" href="assets/site.css?v=c6f7d020a4">
+<script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- build_site:nav -->
@@ -23,97 +25,276 @@
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/icon-180.png" alt="" width="30" height="30"><span>PANZERKEIL</span></a>
     <div class="links">
-      <a href="#gameplay">Gameplay</a>
-      <a href="units.html">Your Army</a>
-      <a href="armoury.html">Armoury</a>
-      <a href="guide.html">How to Play</a>
       <a href="campaigns.html">Campaigns</a>
+      <a href="units.html">Your Army</a>
+      <a href="#battle-mode">Battle Mode</a>
+      <a href="armoury.html">Armoury</a>
       <a href="leaderboards.html">Leaderboards</a>
       <a href="support.html">Help</a>
     </div>
+    <a class="nav-cta" href="#free">Play free</a>
   </div>
 </nav>
 <!-- /build_site:nav -->
 
 <main id="main">
-<header class="hero" id="top">
+
+<!-- Hero -->
+<header class="hero2" id="top">
+  <picture>
+    <img src="assets/home/hero-1.jpg" srcset="assets/home/hero-s-1.jpg 1100w, assets/home/hero-1.jpg 2400w" sizes="100vw"
+         alt="German armour and infantry massed on the Kursk battle map" fetchpriority="high">
+  </picture>
   <div class="wrap">
-    <div>
-      <p class="kicker">The Second World War · 1939 – 1945</p>
-      <h1>PANZERKEIL</h1>
-      <div class="rule"></div>
-      <p class="lede">A turn-based hex wargame for iPhone and iPad. Build and lead an army of your own, and take it with the Wehrmacht, the Western Allies or the Red Army across <span data-gen="battles">48</span> battles on hand-drawn operational maps.</p>
-      <div class="cta">
-        <span class="badge">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
-          <span><small>Coming soon to the</small>App Store</span>
-        </span>
-        <a class="ghost" href="units.html">Build your army</a>
-        <a class="ghost" href="#gameplay">Watch it played</a>
-      </div>
-      <div class="facts">
-        <div><span data-gen="campaigns">3</span><span>Campaigns</span></div>
-        <div><span data-gen="battles">48</span><span>Battles</span></div>
-        <div><span data-gen="units">126</span><span>Unit types</span></div>
-      </div>
+    <p class="eyebrow">The Second World War · 1939 – 1945</p>
+    <h1>PANZERKEIL</h1>
+    <p class="tagline">Build an army of your own. <em>Lead it through the war.</em></p>
+    <p class="say">A turn-based hex wargame across <span data-gen="battles">48</span> battles on hand-drawn maps, made for the phone in your hand and the iPad on your desk.</p>
+    <div class="ctas">
+      <span class="store">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+        <span><small>Coming soon to the</small>App Store</span>
+      </span>
+      <a class="btn-ghost" href="#watch"><span class="play" aria-hidden="true"></span>Watch it played</a>
     </div>
-    <div class="device" aria-hidden="true">
-      <div class="tablet"><img src="assets/ipad-map.jpg" alt=""></div>
-      <div class="phone"><img src="assets/phone-12_commander.jpg" alt=""></div>
-    </div>
+    <p class="devices"><b>Free to start</b> · iPhone · iPad · Mac · Apple TV</p>
   </div>
 </header>
 
-<section class="alt" id="campaigns">
-  <div class="wrap">
-    <p class="kicker">Choose your side</p>
-    <h2>Three wars in one</h2>
-    <p class="lede">How you win decides where the war goes next: a fast, decisive victory opens a different road through the campaign, and a defeat sends you down a harder one.</p>
-    <div class="campaigns">
-      <article class="campaign" style="--side:#4f5a50">
-        <img src="assets/campaign-axis.jpg" alt="The Fall Weiss battle map" loading="lazy">
-        <div class="body">
-          <h3>The Axis</h3>
-          <p class="route">Poland to Berlin</p>
-          <p>From the first days of September 1939 to the last stand in the Reich, and a what-if road to Washington for the boldest commanders.</p>
-          <p class="meta">1939 – 1945 · <span data-gen="axis-battles">23</span> battles</p>
-          <p class="more"><a href="campaigns.html#axis">Every battle of the Axis campaign</a></p>
-        </div>
-      </article>
-      <article class="campaign" style="--side:#94753a">
-        <img src="assets/campaign-west.jpg" alt="A North African desert battle map" loading="lazy">
-        <div class="body">
-          <h3>The Western Allies</h3>
-          <p class="route">Dunkirk to the Elbe</p>
-          <p>The British and Americans from the beaches of Dunkirk through the desert, Italy and Normandy to the Rhine and the race for Berlin.</p>
-          <p class="meta">1940 – 1945 · <span data-gen="west-battles">13</span> battles</p>
-          <p class="more"><a href="campaigns.html#west">Every battle of the Western Allies</a></p>
-        </div>
-      </article>
-      <article class="campaign" style="--side:#963428">
-        <img src="assets/campaign-east.jpg" alt="The Stalingrad battle map" loading="lazy">
-        <div class="body">
-          <h3>The Red Army</h3>
-          <p class="route">From the frontier to the Reichstag</p>
-          <p>Survive 1941, hold Moscow and Stalingrad, then turn the tide at Kursk and drive the long road west to Berlin.</p>
-          <p class="meta">1941 – 1945 · <span data-gen="east-battles">12</span> battles</p>
-          <p class="more"><a href="campaigns.html#east">Every battle of the Red Army</a></p>
-        </div>
-      </article>
+<div class="numbers" role="list">
+  <div role="listitem"><strong><span data-gen="battles">48</span></strong><small>Battles</small></div>
+  <div role="listitem"><strong><span data-gen="campaigns">3</span></strong><small>Campaigns</small></div>
+  <div role="listitem"><strong><span data-gen="units">126</span></strong><small>Unit types</small></div>
+  <div role="listitem"><strong>4</strong><small>Screens</small></div>
+</div>
+
+<!-- Free to start -->
+<section class="free" id="free">
+  <div class="wrap free-grid">
+    <div class="reveal">
+      <p class="eyebrow">Free to start</p>
+      <h2 class="big">Play free.<br><em>Unlock the war</em> once.</h2>
+      <ul class="check">
+        <li>The opening battles of every campaign</li>
+        <li>Basic Training</li>
+        <li>The Daily Operation, every day</li>
+        <li>Battle Mode against other players</li>
+      </ul>
+    </div>
+    <div class="ticket reveal">
+      <p class="eyebrow">One purchase</p>
+      <h3>The Whole War</h3>
+      <p>Every battle of all three campaigns, every Quick Battle and the Weekly Operation, on every screen you own.</p>
+      <div class="units" aria-hidden="true">
+        <img src="assets/home/u-ger_tiger.png" alt="">
+        <img src="assets/home/u-usa_sherman.png" alt="">
+        <img src="assets/home/u-sov_t34_85.png" alt="">
+      </div>
+      <div class="plats"><span>iPhone</span><span>iPad</span><span>Mac</span><span>Apple TV</span></div>
+      <p class="fine">Shared with your family · No ads · No subscriptions</p>
     </div>
   </div>
 </section>
 
-<section id="gameplay">
-  <div class="wrap split">
-    <div>
-      <p class="kicker">See it played</p>
-      <h2>Gameplay</h2>
-      <p class="lede">Select a unit, move it, read the odds, attack, and watch the enemy answer.</p>
-      <p class="film-note">Recorded on iPhone, without sound. Every battle in the game is also filmed as it is fought: watch it again from the result screen, save it as a video and share it.</p>
-      <p class="film-note"><a href="#missions">Hear a battle briefed and remembered</a></p>
+<!-- Choose your side -->
+<section class="sides" id="campaigns">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Choose your side</p>
+      <h2 class="big">Three wars.<br><em>One is yours.</em></h2>
+      <p class="say">How you win decides where the war goes next: a decisive victory opens a different road, a defeat a harder one.</p>
     </div>
-    <div class="phone-film">
+    <div class="posters">
+      <a class="poster reveal" href="campaigns.html#axis" style="--side:#4f5a50">
+        <img class="bg" src="assets/home/side-axis-1.jpg" alt="" loading="lazy">
+        <img class="tank" src="assets/home/u-ger_tiger.png" alt="" loading="lazy">
+        <span class="years">1939 – 1945</span>
+        <h3>The Axis</h3>
+        <p class="route">Poland to Berlin</p>
+        <span class="count"><span data-gen="axis-battles">23</span> battles</span>
+      </a>
+      <a class="poster reveal" href="campaigns.html#west" style="--side:#94753a">
+        <img class="bg" src="assets/home/side-west-1.jpg" alt="" loading="lazy">
+        <img class="tank" src="assets/home/u-usa_sherman.png" alt="" loading="lazy">
+        <span class="years">1940 – 1945</span>
+        <h3>The Western Allies</h3>
+        <p class="route">Dunkirk to the Elbe</p>
+        <span class="count"><span data-gen="west-battles">13</span> battles</span>
+      </a>
+      <a class="poster reveal" href="campaigns.html#east" style="--side:#963428">
+        <img class="bg" src="assets/home/side-east-1.jpg" alt="" loading="lazy">
+        <img class="tank" src="assets/home/u-sov_t34_85.png" alt="" loading="lazy">
+        <span class="years">1941 – 1945</span>
+        <h3>The Red Army</h3>
+        <p class="route">The frontier to the Reichstag</p>
+        <span class="count"><span data-gen="east-battles">12</span> battles</span>
+      </a>
+    </div>
+
+    <div class="voices">
+      <div class="reveal">
+        <p class="eyebrow">Briefed before. Remembered after.</p>
+        <h3 class="mid">Every battle <em>has a voice</em></h3>
+        <p class="say">A general of your side reads the briefing. Afterwards, a voiced “What really happened” sets your war beside the real one. Here is Kursk, July 1943, with sound.</p>
+      </div>
+      <figure class="clip reveal">
+        <div class="f-phone">
+          <video controls playsinline preload="none" poster="assets/briefing-kursk-poster.jpg" width="720" height="1564" aria-label="The briefing for Unternehmen Zitadelle, read aloud">
+            <source src="assets/briefing-kursk.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption><strong>The briefing</strong>Unternehmen Zitadelle, 5 July 1943</figcaption>
+      </figure>
+      <figure class="clip reveal">
+        <div class="f-phone">
+          <video controls playsinline preload="none" poster="assets/history-kursk-poster.jpg" width="720" height="1564" aria-label="What really happened at Operation Citadel, narrated">
+            <source src="assets/history-kursk.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption><strong>What really happened</strong>Operation Citadel, 5 to 16 July 1943</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- An army that remembers -->
+<section class="story">
+  <div class="wrap row">
+    <div class="reveal">
+      <p class="eyebrow">An army that remembers</p>
+      <h2 class="mid">Name them. Paint them.<br><em>Bring them home.</em></h2>
+      <p class="say">Your units travel with you from battle to battle and grow from Green recruits to Guards. They win medals with lasting bonuses, from the Iron Cross to the Victoria Cross, and earn traits from what they live through.</p>
+      <ul class="tags">
+        <li class="gold">Tank Hunters</li><li class="gold">Street Fighters</li><li class="gold">Winter-Hardened</li>
+        <li class="bad">Shell-Shocked</li><li class="bad">Battle-Weary</li>
+      </ul>
+      <p class="say">Every unit keeps a service record. The fallen go on the <b>Roll of Honour</b>. Win a campaign and your army marches in a <b>victory parade</b>.</p>
+    </div>
+    <div class="pics reveal">
+      <div class="glow"></div>
+      <div class="f-phone"><img src="assets/home/phone-03_groups-1.jpg" alt="Your Army: a Battle Group and its units, with honours and traits" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-04_trait-1.jpg" alt="A Tiger unit earns the Street Fighters trait at Prokhorovka" loading="lazy" width="640" height="1391"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Battle Mode -->
+<section class="wide" id="battle-mode">
+  <div class="wrap reveal">
+    <p class="eyebrow">Battle Mode</p>
+    <h2 class="big">Your army.<br><em>Their army.</em></h2>
+    <p class="say">Raise a Battle Group for each side from any unit of the war and take it into matches against other players. Your army always comes back, keeps what it learned, and earns titles, feats and honours.</p>
+    <ul class="tags">
+      <li>Choose your side</li><li>Choose the weather</li><li>Fog of war</li><li>Buy intelligence</li><li>Rematch</li>
+    </ul>
+  </div>
+  <div class="stage reveal">
+    <img class="side-units l" src="assets/home/u-ger_panther.png" alt="" loading="lazy">
+    <div class="f-screen"><img src="assets/home/tv-army-1.jpg" alt="A Battle Group on Apple TV: its record, units and honours" loading="lazy" width="1800" height="1013"></div>
+    <img class="side-units r" src="assets/home/u-sov_is2.png" alt="" loading="lazy">
+  </div>
+</section>
+
+<!-- Morale and the fate of a unit -->
+<section class="story alt2">
+  <div class="wrap row flip">
+    <div class="reveal">
+      <p class="eyebrow">Morale and the fate of a unit</p>
+      <h2 class="mid">One blow can<br><em>break a line</em></h2>
+      <p class="say">Units have morale: a surprise against the odds can shake a whole line. Trapped units starve and surrender, and closing a ring is a moment to remember. When a veteran’s life hangs on one blow, the battle slows to watch.</p>
+      <div class="callout">
+        <div><b>Cheated Death</b><span>A veteran that lives through odds that should have destroyed it.</span></div>
+        <div><b>Long Shot</b><span>A kill against long odds, celebrated on the spot.</span></div>
+      </div>
+    </div>
+    <div class="pics reveal">
+      <div class="glow"></div>
+      <div class="f-phone"><img src="assets/home/phone-09_ring-1.jpg" alt="The Lodz Pocket: an enemy unit encircled and cut off from supply" loading="lazy" width="640" height="1391"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Supply, sieges and weather -->
+<section class="weather">
+  <img class="bg" src="assets/home/winter-1.jpg" alt="" loading="lazy">
+  <div class="wrap reveal">
+    <p class="eyebrow">Supply, sieges and weather</p>
+    <h2 class="big">Fight the war.<br><em>And the winter.</em></h2>
+    <div class="trio">
+      <div><b>Supply</b><p>Supply runs along the roads and railheads you hold. Cut the enemy’s lines and their units starve.</p></div>
+      <div><b>Sieges</b><p>Surround a city and its defences crumble, turn by turn.</p></div>
+      <div><b>Weather</b><p>Snow, mud and storms change how every kind of unit moves and fights, with a three-turn forecast.</p></div>
+    </div>
+  </div>
+  <div class="column reveal" aria-hidden="true">
+    <img src="assets/home/u-ger_tiger_winter.png" alt="" loading="lazy">
+    <img src="assets/home/u-sov_t34_85_winter.png" alt="" loading="lazy">
+    <img src="assets/home/u-usa_sherman_winter.png" alt="" loading="lazy">
+  </div>
+</section>
+
+<!-- Commander -->
+<section class="story">
+  <div class="wrap row">
+    <div class="reveal">
+      <p class="eyebrow">Become the commander</p>
+      <h2 class="mid">From Major to<br><em>Field Marshal</em></h2>
+      <p class="say">Rise over <span data-gen="max-level">20</span> levels. Attributes strengthen the whole army; Command Points buy <span data-gen="tactics">13</span> tactics, from an artillery barrage to an airlift.</p>
+      <div class="ladder" aria-label="Ranks"><span>Major</span><i>›</i><span>Colonel</span><i>›</i><span>Brigadier</span><i>›</i><span>Major General</span><i>›</i><span>Lieutenant General</span><i>›</i><span>General</span><i>›</i><span>Field Marshal</span></div>
+      <p class="say">And while the game is closed, your commander keeps working: studying the Field Manual or training a unit of your Battle Group.</p>
+    </div>
+    <div class="pics reveal">
+      <div class="glow"></div>
+      <div class="f-phone"><img src="assets/home/phone-08_commander-1.jpg" alt="The Commander page: rank, level, Command Points and Battle Groups" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-01_title-1.jpg" alt="The title screen with the commander, campaign and today's operations" loading="lazy" width="640" height="1391"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Every attack shows its maths -->
+<section class="story alt2">
+  <div class="wrap row flip">
+    <div class="reveal">
+      <p class="eyebrow">Every attack shows its maths</p>
+      <h2 class="mid">Know the odds<br><em>before you fire</em></h2>
+      <p class="say">Before you commit, the forecast shows attack and defence, every modifier and the losses each side can expect.</p>
+      <p class="say">Then watch the enemy’s turn play out, with your general on the radio calling the big moments.</p>
+    </div>
+    <div class="pics reveal">
+      <div class="glow"></div>
+      <img class="float" src="assets/home/u-ger_88mm.png" alt="" style="left:-4%;bottom:2%" loading="lazy">
+      <div class="f-phone"><img src="assets/home/phone-02_arrow-1.jpg" alt="The attack forecast: a StuG III against Soviet Guards, with every modifier" loading="lazy" width="640" height="1391"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Daily and weekly -->
+<section class="story">
+  <div class="wrap row">
+    <div class="reveal">
+      <p class="eyebrow">Daily and Weekly Operations</p>
+      <h2 class="mid">A new battle<br><em>every day</em></h2>
+      <p class="say">A new battle every day and every week, each with its own twist and a leaderboard that shows the difficulty every score was earned on.</p>
+      <p class="say">Watch the leader’s battle film, and share a film of your own.</p>
+      <ul class="tags"><li class="gold">Three stars a battle</li><li>Leaderboards</li><li>Battle films</li></ul>
+    </div>
+    <div class="pics reveal">
+      <div class="glow"></div>
+      <div class="f-phone"><img src="assets/home/phone-07_victory-1.jpg" alt="A decisive victory with stars and the battle film" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-11_history-1.jpg" alt="What really happened at Operation Citadel, beside your result" loading="lazy" width="640" height="1391"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Watch -->
+<section class="watch" id="watch">
+  <div class="wrap row">
+    <div class="reveal">
+      <p class="eyebrow">See it played</p>
+      <h2 class="big">Move.<br>Strike.<br><em>Hold.</em></h2>
+      <p class="say">Select a unit, read the odds, attack, and watch the enemy answer. Recorded on iPhone, without sound.</p>
+    </div>
+    <div class="f-phone reveal">
       <video controls playsinline preload="none" poster="assets/gameplay-poster.jpg" width="720" height="1564" aria-label="Panzerkeil gameplay video, without sound">
         <source src="assets/gameplay.mp4" type="video/mp4">
         <p>Your browser cannot play this video here. <a href="assets/gameplay.mp4">Download the gameplay video</a>.</p>
@@ -122,160 +303,72 @@
   </div>
 </section>
 
-<section class="alt" id="missions">
-  <div class="wrap">
-    <p class="kicker">One mission, as the game shows it</p>
-    <h2>Every battle briefed and remembered</h2>
-    <p class="lede">All <span data-gen="battles">48</span> battles have a voiced briefing before the fight and a voiced “What really happened” after it. Here is one of them: Kursk, July 1943.</p>
-    <div class="clips">
-      <figure class="clip">
-        <div class="phone-film">
-          <video controls playsinline preload="none" poster="assets/briefing-kursk-poster.jpg" width="720" height="1564" aria-label="The briefing for Unternehmen Zitadelle, read aloud">
-            <source src="assets/briefing-kursk.mp4" type="video/mp4">
-            <p><a href="assets/briefing-kursk.mp4">Download the briefing video</a>.</p>
-          </video>
-        </div>
-        <figcaption><strong>The briefing</strong>Unternehmen Zitadelle, 5 July 1943, read aloud by a general of the side you play. From the game, with its own voice recording; it has sound.</figcaption>
-      </figure>
-      <figure class="clip">
-        <div class="phone-film">
-          <video controls playsinline preload="none" poster="assets/history-kursk-poster.jpg" width="720" height="1564" aria-label="What really happened at Operation Citadel, narrated">
-            <source src="assets/history-kursk.mp4" type="video/mp4">
-            <p><a href="assets/history-kursk.mp4">Download the history video</a>.</p>
-          </video>
-        </div>
-        <figcaption><strong>What really happened</strong>Operation Citadel, 5 to 16 July 1943, narrated after the battle. From the game, with its own voice recording; it has sound.</figcaption>
-      </figure>
-    </div>
-    <p class="film-note" style="margin:24px auto 0;text-align:center">Read every briefing and every history on the <a href="campaigns.html">Campaigns</a> page.</p>
+<!-- Every screen -->
+<section class="screens" id="screens">
+  <div class="wrap reveal">
+    <p class="eyebrow">iPhone · iPad · Mac · Apple TV</p>
+    <h2 class="big">One war.<br><em>Every screen.</em></h2>
+    <p class="say">Touch, keyboard and mouse, the Siri Remote or a game controller. Your war follows you through iCloud, and The Whole War is bought once for all of them.</p>
+  </div>
+  <div class="lineup reveal">
+    <div class="tv"><div class="f-screen"><img src="assets/home/tv-battle-1.jpg" alt="Panzerkeil on Apple TV, played with a controller" loading="lazy" width="1600" height="900"></div><span class="label">Apple TV</span></div>
+    <div class="ipad"><div class="f-screen"><img src="assets/home/ipad-battle-1.jpg" alt="Panzerkeil on iPad" loading="lazy" width="1000" height="1333"></div><span class="label">iPad</span></div>
+    <div class="iphone"><div class="f-phone"><img src="assets/home/phone-10_match-1.jpg" alt="Panzerkeil on iPhone" loading="lazy" width="640" height="1391"></div><span class="label">iPhone</span></div>
+    <div class="mac f-mac"><div class="f-screen"><img src="assets/home/mac-battle-1.jpg" alt="Panzerkeil on Mac" loading="lazy" width="1800" height="1078"></div></div>
   </div>
 </section>
 
-<section id="features">
+<!-- Everything in the box -->
+<section class="box" id="features">
   <div class="wrap">
-    <p class="kicker">What's inside</p>
-    <h2>Built for the long war</h2>
-    <div class="features">
-      <div class="feature"><img src="assets/units/ger_tiger.png" alt=""><div><h3>Build and lead your own army</h3><p>Your units are yours: name them, mark them with an insignia, and carry them from battle to battle as they rise from Green to Guards, win medals, earn traits and cheat death. In Battle Mode, raise a Battle Group for each side from every unit of the war. <a href="units.html">Your Army</a>.</p></div></div>
-      <div class="feature"><img src="assets/unit-ger_panzer_iv.png" alt=""><div><h3>Become the commander</h3><p>Create yourself and rise from Major to Field Marshal over <span data-gen="max-level">20</span> levels. Levels bring attributes that strengthen the whole army; Command Points unlock <span data-gen="tactics-word">thirteen</span> tactics, from an artillery barrage to air superiority, winter gear or an airlift into a pocket.</p></div></div>
-      <div class="feature"><img src="assets/unit-ger_sdkfz222.png" alt=""><div><h3>Your commander works while you're away</h3><p>Post them to study historical battles, study the enemy's weaknesses or train troops. Each of the <span data-gen="chapters-word">ten</span> chapters of the Field Manual unlocks advice on the battlefield and a training lesson of its own.</p></div></div>
-      <div class="feature"><img src="assets/unit-ger_88mm.png" alt=""><div><h3>Every attack shows its maths</h3><p>Before you commit, the preview shows attack and defence, every modifier from terrain to experience, and the losses each side can expect. A unit's card lists everything in force on it, from the weather to supply trouble.</p></div></div>
-      <div class="feature"><img src="assets/unit-brit_infantry_43.png" alt=""><div><h3>An army that remembers</h3><p>Your core units carry their experience, names, medals and traits from battle to battle, from Green recruits to Guards. <span data-gen="medals-word">nine</span> kinds of medal give permanent bonuses. Lose a veteran and it's gone for good. <a href="units.html#medals">Every medal</a>.</p></div></div>
-      <div class="feature"><img src="assets/units/ger_infantry_39.png" alt=""><div><h3>Training that teaches by doing</h3><p>Five Basic Training lessons on a real battle map, every step checked by what you actually do, then a lesson for each chapter of the Field Manual. <a href="guide.html#first-battle">Your first battle</a>.</p></div></div>
-      <div class="feature"><img src="assets/unit-usa_sherman.png" alt=""><div><h3>Stars, and a battle every day</h3><p>Three stars to earn in every battle, a Daily Operation every day and a Weekly Operation every week, each with its own twist and a Game Center leaderboard.</p></div></div>
-      <div class="feature"><img src="assets/unit-sov_is2.png" alt=""><div><h3><span data-gen="achievements-word">Twenty-five</span> achievements</h3><p>From your first victory to every front won, plus a war map of your campaign and a battle report to share. <a href="leaderboards.html#achievements">See them all</a>.</p></div></div>
-      <div class="feature"><img src="assets/units/usa_airborne.png" alt=""><div><h3>Play a friend, turn by turn</h3><p>Any of the <span data-gen="battles">48</span> battles against another player through Game Center, or Battle Mode with an army of your own. Move when it suits you; a notification tells you when it's your turn again.</p></div></div>
-      <div class="feature"><img src="assets/unit-brit_firefly.png" alt=""><div><h3>No ads, no tracking</h3><p>One purchase, everything included. Every battle plays offline, and saves sync through your own iCloud account between iPhone and iPad.</p></div></div>
+    <div class="reveal">
+      <p class="eyebrow">Everything in the box</p>
+      <h2 class="big">Built for <em>the long war</em></h2>
+    </div>
+    <div class="box-grid">
+      <div class="reveal"><img src="assets/home/u-ger_panther.png" alt="" loading="lazy"><p><b>Three campaigns, <span data-gen="battles">48</span> battles</b><small>Branching roads through the war</small></p></div>
+      <div class="reveal"><img src="assets/home/u-sov_katyusha.png" alt="" loading="lazy"><p><b><span data-gen="units">126</span> illustrated unit types</b><small>From cavalry to jet fighters</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_churchill.png" alt="" loading="lazy"><p><b>Battle Mode</b><small>Your own army against other players, under fog of war</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_spitfire.png" alt="" loading="lazy"><p><b>Game Center matches</b><small>Turn by turn, with chat and rematches</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_infantry_43.png" alt="" loading="lazy"><p><b>Morale, traits and medals</b><small>12 traits, <span data-gen="medals-word">nine</span> medals, service records and the Roll of Honour</small></p></div>
+      <div class="reveal"><img src="assets/home/u-ger_ju87.png" alt="" loading="lazy"><p><b>Encirclement and supply</b><small>Supply lines, sieges, airlifts and weather by unit type</small></p></div>
+      <div class="reveal"><img src="assets/home/u-usa_airborne.png" alt="" loading="lazy"><p><b>Voiced briefings and histories</b><small>And battlefield calls from your general</small></p></div>
+      <div class="reveal"><img src="assets/home/u-usa_p47.png" alt="" loading="lazy"><p><b>Battle films</b><small>Watch every battle again, and share it</small></p></div>
+      <div class="reveal"><img src="assets/home/u-sov_il2.png" alt="" loading="lazy"><p><b><span data-gen="achievements">25</span> achievements</b><small>And six Game Center leaderboards</small></p></div>
+      <div class="reveal"><img src="assets/home/u-ger_88mm.png" alt="" loading="lazy"><p><b>Three difficulty levels</b><small>Fog of war, Dynamic Type and colour-vision settings</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_crusader_desert.png" alt="" loading="lazy"><p><b>Widgets</b><small>On the Home Screen and the Lock Screen</small></p></div>
+      <div class="reveal"><img src="assets/home/u-ger_panzer_iii_desert.png" alt="" loading="lazy"><p><b>Plays offline</b><small>No ads, no tracking</small></p></div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="battlefield">
-  <div class="wrap">
-    <p class="kicker">On the battlefield</p>
-    <h2>The war on the map</h2>
-    <p class="lede">The classic loop of move, attack, capture and resupply, with the things that decided real battles: supply, pockets, nerve and the weather.</p>
-    <div class="features">
-      <div class="feature"><img src="assets/units/brit_carrier.png" alt="" loading="lazy"><div><h3>Supply, sieges and railheads</h3><p>Supply runs from your edge of the map, further along the roads, through the towns you hold and from the railheads in any weather. Units cut off lose strength every turn. Surround a city and its garrison lives on its stores, then weakens turn by turn until the ring is broken.</p></div></div>
-      <div class="feature"><img src="assets/units/sov_t34_85.png" alt="" loading="lazy"><div><h3>Encirclement</h3><p>Close a ring round two or more enemy units and the camera pulls back to show the pocket, named for the nearest town. Trapped units lose heart and surrender; a tank or gun is sometimes taken intact and joins your army. The enemy closes rings too.</p></div></div>
-      <div class="feature"><img src="assets/units/ger_sturmpioniere.png" alt="" loading="lazy"><div><h3>Morale that moves on surprises</h3><p>From Broken to Inspired, morale moves only when a fight goes clearly better or worse than its odds, and it spreads to the units beside it. At the ends of the scale a unit may become a Leader, or Unbreakable.</p></div></div>
-      <div class="feature"><img src="assets/units/brit_churchill.png" alt="" loading="lazy"><div><h3>Traits earned in the field</h3><p>Destroy three tanks and become Tank Hunters; hold a town through three attacks and become Street Fighters; come through a winter battle Winter-Hardened. Some traits are scars: Shell-Shocked, Battle-Weary, Hesitant. <a href="units.html#traits">All twelve traits</a>.</p></div></div>
-      <div class="feature"><img src="assets/unit-sov_il2.png" alt=""><div><h3>Weather that knows the difference</h3><p>Rain, snow, mud and storms, felt by each type of unit in its own way: infantry walks through rain that bogs down tanks, guns and aircraft lose their aim, and mud keeps aircraft on the ground except from a city's runways. The forecast shows the next three turns.</p></div></div>
-      <div class="feature"><img src="assets/units/ger_puma.png" alt="" loading="lazy"><div><h3>Fog of war and intelligence</h3><p>See only what your units see. Switch the map between Battle, Supply and Intel views, and spend prestige on aerial reconnaissance, agent reports, a signals intercept or a dossier on the enemy commander. March into the unseen and risk an ambush.</p></div></div>
-      <div class="feature"><img src="assets/units/ger_tiger.png" alt="" loading="lazy"><div><h3>An enemy with a plan</h3><p>The computer sees what you see and rolls the same dice. On Normal and Hard it picks a main effort, gathers before a defended town and goes in together, counter-attacks a town held weakly, and brings a commander and tactics of its own.</p></div></div>
-      <div class="feature"><img src="assets/units/sov_katyusha.png" alt="" loading="lazy"><div><h3>Moments that matter</h3><p>A unit that lives through odds that should have destroyed it has Cheated Death, and earns a second chance in every battle after. A kill at long odds is celebrated as Against the Odds, and your general calls the moments of the battle aloud.</p></div></div>
+<!-- Final call -->
+<section class="finale">
+  <img class="bg" src="assets/home/desert-1.jpg" alt="" loading="lazy">
+  <div class="wrap reveal">
+    <p class="eyebrow">Free to start</p>
+    <h2 class="big">The war<br><em>is waiting.</em></h2>
+    <p class="say">Start with the opening battles of every campaign. Unlock the whole war whenever you are ready.</p>
+    <div class="ctas">
+      <span class="store">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+        <span><small>Coming soon to the</small>App Store</span>
+      </span>
     </div>
-  </div>
-</section>
-
-<div class="band">
-  <div class="wrap">
-    <p class="kicker">Europe and North Africa · 1939 – 1945</p>
-    <h2>Follow your war across the map</h2>
-    <p class="lede">Every battle you fight is marked on the campaign map, with the roads still ahead of you.</p>
-  </div>
-</div>
-
-<section id="modes">
-  <div class="wrap">
-    <p class="kicker">Every day, and head to head</p>
-    <h2>A battle for every day</h2>
-    <p class="lede">Operations for when you have ten minutes, and opponents for when you want one.</p>
-    <div class="features">
-      <div class="feature"><img src="assets/units/usa_p47.png" alt="" loading="lazy"><div><h3>Daily and Weekly Operations</h3><p>One short battle a day and one a week, the same for every player, each with a twist: a blizzard, a veteran enemy, fewer turns. Win the Daily Operation day after day to build a streak.</p></div></div>
-      <div class="feature"><img src="assets/units/brit_spitfire.png" alt="" loading="lazy"><div><h3>Leaderboards, with films</h3><p>Your best score goes to the day's or week's board, every campaign keeps a score of its own, and multiplayer wins are counted. Watch the leader's film of the battle to see how it was won. <a href="leaderboards.html">How scores are made</a>.</p></div></div>
-      <div class="feature"><img src="assets/units/ger_stug.png" alt="" loading="lazy"><div><h3>Scenario matches</h3><p>Any of the <span data-gen="battles">48</span> battles against another player. Each battle is labelled Even, or Favoured against a Challenge, and the harder side pays extra Command Points. Chat as you play, nudge a quiet opponent, and every turn is checked on your own copy of the battle.</p></div></div>
-      <div class="feature"><img src="assets/units/usa_m18.png" alt="" loading="lazy"><div><h3>Battle Mode</h3><p>Bring an army of your own: a Battle Group for each side of the war, bought with Command Points from every unit of the war, named and given an emblem. Both sides field <span data-gen="bm-points">2,800</span> points on the ground of <span data-gen="bm-maps">Barbarossa, Kursk and Market Garden</span>, under fog of war, in the weather you choose.</p></div></div>
-      <div class="feature"><img src="assets/units/sov_infantry_44.png" alt="" loading="lazy"><div><h3>Units with a story</h3><p>A Battle Group's units always come back. They earn grades, medals, titles from Blooded to Legends, feats such as Tank Killers and The Wall, and an honour for every battle won, all shown in a short ceremony after the match. <a href="units.html#battle-groups">Battle Groups</a>.</p></div></div>
-      <div class="feature"><img src="assets/units/ger_me262.png" alt="" loading="lazy"><div><h3>A turn when it suits you</h3><p>Play your turn whenever you like: a day for each turn unless the match chose 12 hours or 3 days. Your opponent's last turn replays on the map before you move, and your record keeps every match.</p></div></div>
+    <div class="column" aria-hidden="true">
+      <img src="assets/home/u-brit_crusader_desert.png" alt="" loading="lazy">
+      <img class="face" src="assets/home/u-ger_panzer_iii_desert.png" alt="" loading="lazy">
     </div>
+    <p class="deeper">
+      <a href="campaigns.html">All <span data-gen="battles">48</span> battles</a>
+      <a href="units.html">Your Army</a>
+      <a href="armoury.html">The Armoury</a>
+      <a href="leaderboards.html">Leaderboards</a>
+      <a href="support.html">Help</a>
+    </p>
   </div>
 </section>
 
-<section class="alt" id="history">
-  <div class="wrap">
-    <p class="kicker">History, told with care</p>
-    <h2>The war as it was</h2>
-    <p class="lede">Every battle is a real one, briefed by a general of your side and set beside what really happened.</p>
-    <div class="features">
-      <div class="feature"><img src="assets/units/brit_artillery_43.png" alt="" loading="lazy"><div><h3>Briefings read aloud</h3><p>A general of the side you command reads every briefing, and calls out the battle as it happens: a town taken, a ring closed, the last turns. <a href="#missions">Hear the Kursk briefing</a>.</p></div></div>
-      <div class="feature"><img src="assets/units/sov_infantry_41.png" alt="" loading="lazy"><div><h3>What really happened</h3><p>After each battle your result is set beside the real one: who held each town and when, the account of the battle and what it cost. <a href="campaigns.html">Read them with the battles</a>.</p></div></div>
-      <div class="feature"><img src="assets/units/usa_pershing.png" alt="" loading="lazy"><div><h3>A Victory Parade</h3><p>Win a campaign and your army marches: the road you took, your general's Order of the Day, every unit that came through, the Unit of the Campaign, the Roll of Honour and a citation to share. Lose one, and your general gives a last order instead.</p></div></div>
-      <div class="feature"><img src="assets/units/brit_lancaster.png" alt="" loading="lazy"><div><h3>Made for iPhone and iPad</h3><p>Larger text and a colour vision setting, Reduce Motion honoured, Home Screen and Lock Screen widgets, and up to three commanders sharing one device, each with their own career.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="screens">
-  <div class="wrap">
-    <p class="kicker">On iPhone and iPad</p>
-    <h2>A look at the game</h2>
-  </div>
-  <div class="shots" role="list">
-    <figure role="listitem"><img src="assets/phone-02_map.jpg" alt="The Barbarossa battle map" loading="lazy"><figcaption>Hand-drawn operational maps</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-12_commander.jpg" alt="The Commander page" loading="lazy"><figcaption>Your own commander</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-04_odds.jpg" alt="The attack preview" loading="lazy"><figcaption>Know the odds</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-13_tactics.jpg" alt="Choosing a tactic" loading="lazy"><figcaption>Tactics that turn battles</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-14_victory.jpg" alt="A decisive victory with three stars" loading="lazy"><figcaption>Earn your stars</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-15_weekly.jpg" alt="Quick Battle and the Weekly Operation" loading="lazy"><figcaption>A new operation every week</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-16_warmap.jpg" alt="The campaign war map" loading="lazy"><figcaption>The war map</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-08_hq.jpg" alt="Headquarters" loading="lazy"><figcaption>Refit and reinforce</figcaption></figure>
-    <figure role="listitem"><img src="assets/phone-10_west.jpg" alt="A Western Allies battle in the desert" loading="lazy"><figcaption>The desert war</figcaption></figure>
-  </div>
-</section>
-
-<section class="alt" id="explore">
-  <div class="wrap">
-    <p class="kicker">Go deeper</p>
-    <h2>The reference room</h2>
-    <div class="explore">
-      <a href="units.html"><h3>Your Army</h3><p>Your campaign army and Battle Groups, experience, every medal, morale and every trait.</p><span class="go">Meet your army</span></a>
-      <a href="armoury.html"><h3>Armoury</h3><p>All <span data-gen="units">126</span> unit types with their art, numbers and lines of equipment.</p><span class="go">Open the Armoury</span></a>
-      <a href="guide.html"><h3>How to Play</h3><p>The complete rules, in the game's own words, with your first battle step by step.</p><span class="go">Read the guide</span></a>
-      <a href="campaigns.html"><h3>Campaigns</h3><p>Every battle's briefing, objectives and clock, and what really happened.</p><span class="go">See all <span data-gen="battles">48</span> battles</span></a>
-      <a href="leaderboards.html"><h3>Leaderboards</h3><p>What each Game Center board ranks, how scores are made, and every achievement.</p><span class="go">See the boards</span></a>
-    </div>
-  </div>
-</section>
-
-<section id="support">
-  <div class="wrap">
-    <p class="kicker">Support</p>
-    <h2>Questions and help</h2>
-    <div class="support">
-      <div>
-        <h3>Contact</h3>
-        <p>Questions, bug reports and suggestions are welcome at <a href="mailto:levihopper+panzerkeil@gmail.com">levihopper+panzerkeil@gmail.com</a>.</p>
-        <p>For a bug, please include your device, iOS version, and the battle and turn where it happened.</p>
-      </div>
-      <div>
-        <h3>Common questions</h3>
-        <p>Starting a different campaign, difficulty levels, saves and iCloud, achievements, postings and the Field Manual.</p>
-        <p><a href="support.html">Read the full help page</a> · <a href="privacy.html">Privacy policy</a></p>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
 <!-- build_site:footer -->
@@ -287,5 +380,18 @@
 </footer>
 <!-- /build_site:footer -->
 
+<script>
+(function () {
+  var items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    items.forEach(function (el) { el.classList.add("in"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -60px 0px", threshold: 0.08 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
 </body>
 </html>
