@@ -13,8 +13,8 @@
 <link rel="icon" href="assets/icon-180.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <meta name="theme-color" content="#0f0e0b">
-<link rel="preload" as="image" href="assets/home/hero-1.jpg" imagesrcset="assets/home/hero-s-1.jpg 1100w, assets/home/hero-1.jpg 2400w" imagesizes="100vw">
-<link rel="stylesheet" href="assets/site.css?v=c6f7d020a4">
+<link rel="preload" as="image" href="assets/home/hero-2.jpg" imagesrcset="assets/home/hero-s-2.jpg 1100w, assets/home/hero-2.jpg 2400w" imagesizes="100vw">
+<link rel="stylesheet" href="assets/site.css?v=22b52f3d18">
 <script>document.documentElement.classList.add("js")</script>
 <!-- build_site:analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GCEBCT051"></script>
@@ -44,7 +44,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <a href="leaderboards.html">Leaderboards</a>
       <a href="support.html">Help</a>
     </div>
-    <a class="nav-cta" href="#free">Play free</a>
+    <a class="nav-cta" href="#updates">Get updates</a>
   </div>
 </nav>
 <!-- /build_site:nav -->
@@ -54,7 +54,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 <!-- Hero -->
 <header class="hero2" id="top">
   <picture>
-    <img src="assets/home/hero-1.jpg" srcset="assets/home/hero-s-1.jpg 1100w, assets/home/hero-1.jpg 2400w" sizes="100vw"
+    <img src="assets/home/hero-2.jpg" srcset="assets/home/hero-s-2.jpg 1100w, assets/home/hero-2.jpg 2400w" sizes="100vw"
          alt="German armour and infantry massed on the Kursk battle map" fetchpriority="high">
   </picture>
   <div class="wrap">
@@ -69,6 +69,18 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       </span>
       <a class="btn-ghost" href="#watch"><span class="play" aria-hidden="true"></span>Watch it played</a>
     </div>
+    <p class="ask">Get word the day it comes out</p>
+<!-- build_site:hero-signup -->
+<form class="signup-form" name="updates" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company">
+  <input type="hidden" name="form-name" value="updates">
+  <input type="hidden" name="page" value="index-hero">
+  <p class="hp" hidden><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+  <label class="vh" for="email-hero">Email address</label>
+  <div class="field"><input id="email-hero" type="email" name="email" required autocomplete="email" placeholder="Your email address"><button type="submit">Sign me up</button></div>
+  <p class="fine">One email when it comes out, then only big news. Unsubscribe any time. <a href="privacy.html#updates">Privacy</a></p>
+  <p class="done" role="status" aria-live="polite"></p>
+</form>
+<!-- /build_site:hero-signup -->
     <p class="devices"><b>Free to start</b> · iPhone · iPad · Mac · Apple TV</p>
   </div>
 </header>
@@ -98,9 +110,9 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <h3>The Whole War</h3>
       <p>Every battle of all three campaigns, every Quick Battle and the Weekly Operation, on every screen you own.</p>
       <div class="units" aria-hidden="true">
-        <img src="assets/home/u-ger_tiger.png" alt="">
-        <img src="assets/home/u-usa_sherman.png" alt="">
-        <img src="assets/home/u-sov_t34_85.png" alt="">
+        <img src="assets/home/u-ger_tiger-2.png" alt="">
+        <img src="assets/home/u-usa_sherman-2.png" alt="">
+        <img src="assets/home/u-sov_t34_85-2.png" alt="">
       </div>
       <div class="plats"><span>iPhone</span><span>iPad</span><span>Mac</span><span>Apple TV</span></div>
       <p class="fine">Shared with your family · No ads · No subscriptions</p>
@@ -118,24 +130,24 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     </div>
     <div class="posters">
       <a class="poster reveal" href="campaigns.html#axis" style="--side:#4f5a50">
-        <img class="bg" src="assets/home/side-axis-1.jpg" alt="" loading="lazy">
-        <img class="tank" src="assets/home/u-ger_tiger.png" alt="" loading="lazy">
+        <img class="bg" src="assets/home/side-axis-2.jpg" alt="" loading="lazy">
+        <img class="tank" src="assets/home/u-ger_tiger-2.png" alt="" loading="lazy">
         <span class="years">1939 – 1945</span>
         <h3>The Axis</h3>
         <p class="route">Poland to Berlin</p>
         <span class="count"><span data-gen="axis-battles">23</span> battles</span>
       </a>
       <a class="poster reveal" href="campaigns.html#west" style="--side:#94753a">
-        <img class="bg" src="assets/home/side-west-1.jpg" alt="" loading="lazy">
-        <img class="tank" src="assets/home/u-usa_sherman.png" alt="" loading="lazy">
+        <img class="bg" src="assets/home/side-west-2.jpg" alt="" loading="lazy">
+        <img class="tank" src="assets/home/u-usa_sherman-2.png" alt="" loading="lazy">
         <span class="years">1940 – 1945</span>
         <h3>The Western Allies</h3>
         <p class="route">Dunkirk to the Elbe</p>
         <span class="count"><span data-gen="west-battles">13</span> battles</span>
       </a>
       <a class="poster reveal" href="campaigns.html#east" style="--side:#963428">
-        <img class="bg" src="assets/home/side-east-1.jpg" alt="" loading="lazy">
-        <img class="tank" src="assets/home/u-sov_t34_85.png" alt="" loading="lazy">
+        <img class="bg" src="assets/home/side-east-2.jpg" alt="" loading="lazy">
+        <img class="tank" src="assets/home/u-sov_t34_85-2.png" alt="" loading="lazy">
         <span class="years">1941 – 1945</span>
         <h3>The Red Army</h3>
         <p class="route">The frontier to the Reichstag</p>
@@ -175,17 +187,35 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     <div class="reveal">
       <p class="eyebrow">An army that remembers</p>
       <h2 class="mid">Name them. Paint them.<br><em>Bring them home.</em></h2>
-      <p class="say">Your units travel with you from battle to battle and grow from Green recruits to Guards. They win medals with lasting bonuses, from the Iron Cross to the Victoria Cross, and earn traits from what they live through.</p>
+      <p class="say">Your units travel with you from battle to battle and grow from Green recruits to Guards. Each one comes with a name of its own, wins medals with lasting bonuses, from the Iron Cross to the Victoria Cross, and earns traits from what it lives through. Two that fight five battles side by side become <b>brothers in arms</b>.</p>
       <ul class="tags">
         <li class="gold">Tank Hunters</li><li class="gold">Street Fighters</li><li class="gold">Winter-Hardened</li>
         <li class="bad">Shell-Shocked</li><li class="bad">Battle-Weary</li>
       </ul>
-      <p class="say">Every unit keeps a service record. The fallen go on the <b>Roll of Honour</b>. Win a campaign and your army marches in a <b>victory parade</b>.</p>
+      <p class="say">Every unit keeps a service record. The fallen go on the <b>Roll of Honour</b>. At the end of a war you choose who goes into the <b>Hall of Honour</b>; win it and your army marches in a <b>victory parade</b>, lose it and the last of them make a stand.</p>
     </div>
     <div class="pics reveal">
       <div class="glow"></div>
-      <div class="f-phone"><img src="assets/home/phone-03_groups-1.jpg" alt="Your Army: a Battle Group and its units, with honours and traits" loading="lazy" width="640" height="1391"></div>
-      <div class="f-phone"><img src="assets/home/phone-04_trait-1.jpg" alt="A Tiger unit earns the Street Fighters trait at Prokhorovka" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-03_groups-2.jpg" alt="Your Army: a Battle Group and its units, with honours and traits" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-04_trait-2.jpg" alt="A Tiger unit earns the Street Fighters trait at Prokhorovka" loading="lazy" width="640" height="1391"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Unit cards -->
+<section class="story alt2" id="cards">
+  <div class="wrap row flip">
+    <div class="reveal">
+      <p class="eyebrow">Every unit is a card</p>
+      <h2 class="mid">A card that<br><em>lives its war</em></h2>
+      <p class="say">Every unit carries a trading card that changes as it fights. The edge turns from bronze to silver to gold, kill marks line up under the picture, and the back keeps its road through the war, its form and its luck with the dice.</p>
+      <p class="say">When something big happens, it is stamped on the card where it happened: a trait earned under fire, a third town taken, death cheated. A unit can end the war <b>Lucky</b>, or <b>Cursed</b>.</p>
+      <ul class="tags"><li class="gold">Town Taker</li><li class="gold">Lucky Star</li><li class="gold">Brothers in arms</li><li class="bad">Killed in action</li></ul>
+    </div>
+    <div class="pics reveal">
+      <div class="glow"></div>
+      <div class="f-phone"><img src="assets/home/phone-21_cards-2.jpg" alt="Unit cards: a gold Panther with its kills, form and stats, and a silver StuG III" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-22_stamp-2.jpg" alt="An 88mm FlaK earns Tank Hunters at Prokhorovka, stamped on its service record" loading="lazy" width="640" height="1391"></div>
     </div>
   </div>
 </section>
@@ -197,13 +227,13 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     <h2 class="big">Your army.<br><em>Their army.</em></h2>
     <p class="say">Raise a Battle Group for each side from any unit of the war and take it into matches against other players. Your army always comes back, keeps what it learned, and earns titles, feats and honours.</p>
     <ul class="tags">
-      <li>Choose your side</li><li>Choose the weather</li><li>Fog of war</li><li>Buy intelligence</li><li>Rematch</li>
+      <li>Choose your side</li><li>Choose the weather</li><li>Fog of war</li><li>Buy intelligence</li><li>Its own camp</li><li>Rematch</li>
     </ul>
   </div>
   <div class="stage reveal">
-    <img class="side-units l" src="assets/home/u-ger_panther.png" alt="" loading="lazy">
-    <div class="f-screen"><img src="assets/home/tv-army-1.jpg" alt="A Battle Group on Apple TV: its record, units and honours" loading="lazy" width="1800" height="1013"></div>
-    <img class="side-units r" src="assets/home/u-sov_is2.png" alt="" loading="lazy">
+    <img class="side-units l" src="assets/home/u-ger_panther-2.png" alt="" loading="lazy">
+    <div class="f-screen"><img src="assets/home/tv-army-2.jpg" alt="A Battle Group on Apple TV: its record, units and honours" loading="lazy" width="1800" height="1013"></div>
+    <img class="side-units r" src="assets/home/u-sov_is2-2.png" alt="" loading="lazy">
   </div>
 </section>
 
@@ -214,21 +244,25 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <p class="eyebrow">Morale and the fate of a unit</p>
       <h2 class="mid">One blow can<br><em>break a line</em></h2>
       <p class="say">Units have morale: a surprise against the odds can shake a whole line. Trapped units starve and surrender, and closing a ring is a moment to remember. When a veteran’s life hangs on one blow, the battle slows to watch.</p>
-      <div class="callout">
+      <p class="say">And the war wears them down. Units come out of battle worn, short of men and carrying hardships, from <b>Gun-Shy</b> to <b>Frostbitten</b>, that only rest, a deed or the camp can lift.</p>
+      <div class="callout four">
         <div><b>Cheated Death</b><span>A veteran that lives through odds that should have destroyed it.</span></div>
-        <div><b>Long Shot</b><span>A kill against long odds, celebrated on the spot.</span></div>
+        <div><b>Long Shot</b><span>A kill against long odds, stamped on its card.</span></div>
+        <div><b>Fall Back</b><span>Overrun while defending? Order it back: an even chance it reaches the lines.</span></div>
+        <div><b>Regret of Living</b><span>The price of making it back, carried until it fights its way clear.</span></div>
       </div>
     </div>
     <div class="pics reveal">
       <div class="glow"></div>
-      <div class="f-phone"><img src="assets/home/phone-09_ring-1.jpg" alt="The Lodz Pocket: an enemy unit encircled and cut off from supply" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-24_fallback-2.jpg" alt="A Tiger I overrun at Kursk: order it to fall back, or let it fall" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-09_ring-2.jpg" alt="The Lodz Pocket: an enemy unit encircled and cut off from supply" loading="lazy" width="640" height="1391"></div>
     </div>
   </div>
 </section>
 
 <!-- Supply, sieges and weather -->
 <section class="weather">
-  <img class="bg" src="assets/home/winter-1.jpg" alt="" loading="lazy">
+  <img class="bg" src="assets/home/winter-2.jpg" alt="" loading="lazy">
   <div class="wrap reveal">
     <p class="eyebrow">Supply, sieges and weather</p>
     <h2 class="big">Fight the war.<br><em>And the winter.</em></h2>
@@ -239,9 +273,27 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     </div>
   </div>
   <div class="column reveal" aria-hidden="true">
-    <img src="assets/home/u-ger_tiger_winter.png" alt="" loading="lazy">
-    <img src="assets/home/u-sov_t34_85_winter.png" alt="" loading="lazy">
-    <img src="assets/home/u-usa_sherman_winter.png" alt="" loading="lazy">
+    <img src="assets/home/u-ger_tiger_winter-2.png" alt="" loading="lazy">
+    <img src="assets/home/u-sov_t34_85_winter-2.png" alt="" loading="lazy">
+    <img src="assets/home/u-usa_sherman_winter-2.png" alt="" loading="lazy">
+  </div>
+</section>
+
+<!-- Headquarters -->
+<section class="weather camp" id="headquarters">
+  <img class="bg" src="assets/home/camp-2.jpg" srcset="assets/home/camp-s-2.jpg 1100w, assets/home/camp-2.jpg 2400w" sizes="100vw" alt="" loading="lazy">
+  <div class="wrap reveal">
+    <p class="eyebrow">Headquarters</p>
+    <h2 class="big">Between battles,<br><em>the camp.</em></h2>
+    <p class="say">Your army comes back to a camp of its own, painted for its side and its season, alive with smoke, mess-tin murmur and distant guns. There are never enough beds: choose who heals first.</p>
+    <div class="trio">
+      <div><b>Recruiting Office</b><p>New recruits and veteran replacements, refits and new equipment.</p></div>
+      <div><b>Infirmary</b><p>Two beds for the men who came back short.</p></div>
+      <div><b>Motor Pool</b><p>Two bays for mauled tanks and guns. The rest wait their turn.</p></div>
+      <div><b>Mess Hall</b><p>Short, standard or extra rations, and the talk of the camp.</p></div>
+      <div><b>Rest Centre</b><p>For the shaken and the grieving. Most come out of it themselves again.</p></div>
+      <div><b>Training Ground</b><p>Drill a unit between battles while the others fight on.</p></div>
+    </div>
   </div>
 </section>
 
@@ -257,8 +309,8 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     </div>
     <div class="pics reveal">
       <div class="glow"></div>
-      <div class="f-phone"><img src="assets/home/phone-08_commander-1.jpg" alt="The Commander page: rank, level, Command Points and Battle Groups" loading="lazy" width="640" height="1391"></div>
-      <div class="f-phone"><img src="assets/home/phone-01_title-1.jpg" alt="The title screen with the commander, campaign and today's operations" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-08_commander-2.jpg" alt="The Commander page: rank, level, Command Points and Battle Groups" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-01_title-2.jpg" alt="The title screen with the commander, campaign and today's operations" loading="lazy" width="640" height="1391"></div>
     </div>
   </div>
 </section>
@@ -267,15 +319,16 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 <section class="story alt2">
   <div class="wrap row flip">
     <div class="reveal">
-      <p class="eyebrow">Every attack shows its maths</p>
-      <h2 class="mid">Know the odds<br><em>before you fire</em></h2>
+      <p class="eyebrow">Every attack is a duel</p>
+      <h2 class="mid">Read the odds.<br><em>Roll the dice.</em></h2>
       <p class="say">Before you commit, the forecast shows attack and defence, every modifier and the losses each side can expect.</p>
-      <p class="say">Then watch the enemy’s turn play out, with your general on the radio calling the big moments.</p>
+      <p class="say">Then the two units meet card to card and every die is thrown in front of you, the side with the initiative first. Hits light up red; the one that decides it, you will remember.</p>
+      <p class="say">Watch the enemy’s turn play out the same way, with your general on the radio calling the big moments.</p>
     </div>
     <div class="pics reveal">
       <div class="glow"></div>
-      <img class="float" src="assets/home/u-ger_88mm.png" alt="" style="left:-4%;bottom:2%" loading="lazy">
-      <div class="f-phone"><img src="assets/home/phone-02_arrow-1.jpg" alt="The attack forecast: a StuG III against Soviet Guards, with every modifier" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-20_duel-2.jpg" alt="A duel: an 88mm FlaK against a StuG III, with each side's dice and hits" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-02_arrow-2.jpg" alt="The attack forecast: a StuG III against Soviet Guards, with every modifier" loading="lazy" width="640" height="1391"></div>
     </div>
   </div>
 </section>
@@ -292,8 +345,8 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     </div>
     <div class="pics reveal">
       <div class="glow"></div>
-      <div class="f-phone"><img src="assets/home/phone-07_victory-1.jpg" alt="A decisive victory with stars and the battle film" loading="lazy" width="640" height="1391"></div>
-      <div class="f-phone"><img src="assets/home/phone-11_history-1.jpg" alt="What really happened at Operation Citadel, beside your result" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-07_victory-2.jpg" alt="A decisive victory with stars and the battle film" loading="lazy" width="640" height="1391"></div>
+      <div class="f-phone"><img src="assets/home/phone-11_history-2.jpg" alt="What really happened at Operation Citadel, beside your result" loading="lazy" width="640" height="1391"></div>
     </div>
   </div>
 </section>
@@ -323,10 +376,10 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     <p class="say">Touch, keyboard and mouse, the Siri Remote or a game controller. Your war follows you through iCloud, and The Whole War is bought once for all of them.</p>
   </div>
   <div class="lineup reveal">
-    <div class="tv"><div class="f-screen"><img src="assets/home/tv-battle-1.jpg" alt="Panzerkeil on Apple TV, played with a controller" loading="lazy" width="1600" height="900"></div><span class="label">Apple TV</span></div>
-    <div class="ipad"><div class="f-screen"><img src="assets/home/ipad-battle-1.jpg" alt="Panzerkeil on iPad" loading="lazy" width="1000" height="1333"></div><span class="label">iPad</span></div>
-    <div class="iphone"><div class="f-phone"><img src="assets/home/phone-10_match-1.jpg" alt="Panzerkeil on iPhone" loading="lazy" width="640" height="1391"></div><span class="label">iPhone</span></div>
-    <div class="mac f-mac"><div class="f-screen"><img src="assets/home/mac-battle-1.jpg" alt="Panzerkeil on Mac" loading="lazy" width="1800" height="1078"></div></div>
+    <div class="tv"><div class="f-screen"><img src="assets/home/tv-battle-2.jpg" alt="Panzerkeil on Apple TV, played with a controller" loading="lazy" width="1600" height="900"></div><span class="label">Apple TV</span></div>
+    <div class="ipad"><div class="f-screen"><img src="assets/home/ipad-battle-2.jpg" alt="Panzerkeil on iPad" loading="lazy" width="1000" height="1333"></div><span class="label">iPad</span></div>
+    <div class="iphone"><div class="f-phone"><img src="assets/home/phone-10_match-2.jpg" alt="Panzerkeil on iPhone" loading="lazy" width="640" height="1391"></div><span class="label">iPhone</span></div>
+    <div class="mac f-mac"><div class="f-screen"><img src="assets/home/mac-battle-2.jpg" alt="Panzerkeil on Mac" loading="lazy" width="1800" height="1078"></div></div>
   </div>
 </section>
 
@@ -338,25 +391,25 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <h2 class="big">Built for <em>the long war</em></h2>
     </div>
     <div class="box-grid">
-      <div class="reveal"><img src="assets/home/u-ger_panther.png" alt="" loading="lazy"><p><b>Three campaigns, <span data-gen="battles">48</span> battles</b><small>Branching roads through the war</small></p></div>
-      <div class="reveal"><img src="assets/home/u-sov_katyusha.png" alt="" loading="lazy"><p><b><span data-gen="units">126</span> illustrated unit types</b><small>From cavalry to jet fighters</small></p></div>
-      <div class="reveal"><img src="assets/home/u-brit_churchill.png" alt="" loading="lazy"><p><b>Battle Mode</b><small>Your own army against other players, under fog of war</small></p></div>
-      <div class="reveal"><img src="assets/home/u-brit_spitfire.png" alt="" loading="lazy"><p><b>Game Center matches</b><small>Turn by turn, with chat and rematches</small></p></div>
-      <div class="reveal"><img src="assets/home/u-brit_infantry_43.png" alt="" loading="lazy"><p><b>Morale, traits and medals</b><small>12 traits, <span data-gen="medals-word">nine</span> medals, service records and the Roll of Honour</small></p></div>
-      <div class="reveal"><img src="assets/home/u-ger_ju87.png" alt="" loading="lazy"><p><b>Encirclement and supply</b><small>Supply lines, sieges, airlifts and weather by unit type</small></p></div>
-      <div class="reveal"><img src="assets/home/u-usa_airborne.png" alt="" loading="lazy"><p><b>Voiced briefings and histories</b><small>And battlefield calls from your general</small></p></div>
-      <div class="reveal"><img src="assets/home/u-usa_p47.png" alt="" loading="lazy"><p><b>Battle films</b><small>Watch every battle again, and share it</small></p></div>
-      <div class="reveal"><img src="assets/home/u-sov_il2.png" alt="" loading="lazy"><p><b><span data-gen="achievements">25</span> achievements</b><small>And six Game Center leaderboards</small></p></div>
-      <div class="reveal"><img src="assets/home/u-ger_88mm.png" alt="" loading="lazy"><p><b>Three difficulty levels</b><small>Fog of war, Dynamic Type and colour-vision settings</small></p></div>
-      <div class="reveal"><img src="assets/home/u-brit_crusader_desert.png" alt="" loading="lazy"><p><b>Widgets</b><small>On the Home Screen and the Lock Screen</small></p></div>
-      <div class="reveal"><img src="assets/home/u-ger_panzer_iii_desert.png" alt="" loading="lazy"><p><b>Plays offline</b><small>No ads, no tracking</small></p></div>
+      <div class="reveal"><img src="assets/home/u-ger_panther-2.png" alt="" loading="lazy"><p><b>Three campaigns, <span data-gen="battles">48</span> battles</b><small>Branching roads through the war</small></p></div>
+      <div class="reveal"><img src="assets/home/u-sov_katyusha-2.png" alt="" loading="lazy"><p><b><span data-gen="units">126</span> illustrated unit types</b><small>From cavalry to jet fighters</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_churchill-2.png" alt="" loading="lazy"><p><b>Battle Mode</b><small>Your own army against other players, under fog of war</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_spitfire-2.png" alt="" loading="lazy"><p><b>Game Center matches</b><small>Turn by turn, with chat and rematches</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_infantry_43-2.png" alt="" loading="lazy"><p><b>Unit cards and stamps</b><small>Traits, hardships, <span data-gen="medals-word">nine</span> medals and the Roll of Honour</small></p></div>
+      <div class="reveal"><img src="assets/home/u-ger_ju87-2.png" alt="" loading="lazy"><p><b>Encirclement and supply</b><small>Supply lines, sieges, airlifts and weather by unit type</small></p></div>
+      <div class="reveal"><img src="assets/home/u-usa_airborne-2.png" alt="" loading="lazy"><p><b>Voiced briefings and histories</b><small>And battlefield calls from your general</small></p></div>
+      <div class="reveal"><img src="assets/home/u-usa_p47-2.png" alt="" loading="lazy"><p><b>Battle films</b><small>Watch every battle again, and share it</small></p></div>
+      <div class="reveal"><img src="assets/home/u-sov_il2-2.png" alt="" loading="lazy"><p><b><span data-gen="achievements">25</span> achievements</b><small>And six Game Center leaderboards</small></p></div>
+      <div class="reveal"><img src="assets/home/u-ger_88mm-2.png" alt="" loading="lazy"><p><b>Three difficulty levels</b><small>Fog of war, Dynamic Type and colour-vision settings</small></p></div>
+      <div class="reveal"><img src="assets/home/u-brit_crusader_desert-2.png" alt="" loading="lazy"><p><b>Headquarters</b><small>Six buildings to heal, refit and train your army</small></p></div>
+      <div class="reveal"><img src="assets/home/u-ger_panzer_iii_desert-2.png" alt="" loading="lazy"><p><b>Plays offline</b><small>No ads, no tracking, and widgets for your Home Screen</small></p></div>
     </div>
   </div>
 </section>
 
 <!-- Final call -->
 <section class="finale">
-  <img class="bg" src="assets/home/desert-1.jpg" alt="" loading="lazy">
+  <img class="bg" src="assets/home/desert-2.jpg" alt="" loading="lazy">
   <div class="wrap reveal">
     <p class="eyebrow">Free to start</p>
     <h2 class="big">The war<br><em>is waiting.</em></h2>
@@ -368,8 +421,8 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       </span>
     </div>
     <div class="column" aria-hidden="true">
-      <img src="assets/home/u-brit_crusader_desert.png" alt="" loading="lazy">
-      <img class="face" src="assets/home/u-ger_panzer_iii_desert.png" alt="" loading="lazy">
+      <img src="assets/home/u-brit_crusader_desert-2.png" alt="" loading="lazy">
+      <img class="face" src="assets/home/u-ger_panzer_iii_desert-2.png" alt="" loading="lazy">
     </div>
     <p class="deeper">
       <a href="campaigns.html">All <span data-gen="battles">48</span> battles</a>
@@ -384,12 +437,56 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 </main>
 
 <!-- build_site:footer -->
+<section class="signup" id="updates" aria-labelledby="updates-head">
+  <div class="wrap">
+    <div class="signup-copy">
+      <p class="eyebrow">Dispatches from the front</p>
+      <h2 id="updates-head">Be there <em>on day one</em></h2>
+      <p>Leave your email and we’ll write when Panzerkeil comes out, and when a big update lands: new battles, new ways to fight, new ways to lose a unit you love.</p>
+    </div>
+<form class="signup-form" name="updates" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company">
+  <input type="hidden" name="form-name" value="updates">
+  <input type="hidden" name="page" value="index">
+  <p class="hp" hidden><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+  <label class="vh" for="email-band">Email address</label>
+  <div class="field"><input id="email-band" type="email" name="email" required autocomplete="email" placeholder="Your email address"><button type="submit">Sign me up</button></div>
+  <p class="fine">One email when it comes out, then only big news. Unsubscribe any time. <a href="privacy.html#updates">Privacy</a></p>
+  <p class="done" role="status" aria-live="polite"></p>
+</form>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <span>© 2026 Michael Hopper. Panzerkeil is a game about the history of the Second World War.</span>
     <span><a href="units.html">Your Army</a> · <a href="armoury.html">Armoury</a> · <a href="guide.html">How to Play</a> · <a href="campaigns.html">Campaigns</a> · <a href="leaderboards.html">Leaderboards</a> · <a href="support.html">Help</a> · <a href="privacy.html">Privacy</a></span>
   </div>
 </footer>
+<script>
+(function () {
+  // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.
+  document.querySelectorAll('form[name="updates"]').forEach(function (f) {
+    f.addEventListener("submit", function (e) {
+      if (!window.fetch || !window.URLSearchParams) return;
+      e.preventDefault();
+      var b = f.querySelector("button"), say = f.querySelector(".done");
+      b.disabled = true;
+      say.textContent = "";
+      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                   body: new URLSearchParams(new FormData(f)).toString() })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          f.classList.add("sent");
+          say.textContent = "You’re on the list. We’ll write when there’s news.";
+          if (window.gtag) gtag("event", "sign_up", { method: "updates" });
+        })
+        .catch(function () {
+          b.disabled = false;
+          say.textContent = "That didn’t go through. Please try again in a moment.";
+        });
+    });
+  });
+})();
+</script>
 <!-- /build_site:footer -->
 
 <script>

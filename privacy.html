@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/site.css?v=c6f7d020a4">
+<link rel="stylesheet" href="assets/site.css?v=22b52f3d18">
 <title>Panzerkeil Privacy</title>
 <meta name="description" content="Privacy policy for Panzerkeil. The app collects no data.">
 <style>
@@ -70,7 +70,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <a href="leaderboards.html">Leaderboards</a>
       <a href="support.html">Help</a>
     </div>
-    <a class="nav-cta" href="index.html#free">Play free</a>
+    <a class="nav-cta" href="#updates">Get updates</a>
   </div>
 </nav>
 <!-- /build_site:nav -->
@@ -91,6 +91,9 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 
   <h2>This website</h2>
   <p>Everything above is about the app. This website, panzerkeil.app, uses Google Analytics to count visits: which pages are read, roughly where visitors come from (country or city), the kind of device and browser, and the site that sent them. It is not used for advertising: Google signals and ad personalisation are switched off, and nothing from the website is connected to the app or to your Game Center or iCloud account. In the European Economic Area, the United Kingdom and Switzerland the website sets no analytics cookies, and Google receives only cookie-free counts. Google handles this data under <a href="https://policies.google.com/privacy">Google’s privacy policy</a>; you can also block it with the <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</a>.</p>
+
+  <h2 id="updates">Updates by email</h2>
+  <p>If you sign up for updates on this website, we keep the email address you give and the page you signed up on. It is held by Netlify, the company that hosts this website, under <a href="https://www.netlify.com/privacy/">Netlify’s privacy policy</a>. We use it only to email you news of Panzerkeil: when it comes out, and when a big update lands. We never sell it or share it with anyone else, and it is never connected to the app or to your Game Center or iCloud account. Every email tells you how to stop them; you can also write to us below at any time and we will delete your address.</p>
 
   <h2>What stays on your device</h2>
   <p>Your campaign and Quick Battle saves, your commander (the name you give yourself, your level, attributes and tactics), your stars, achievement progress, Quick Battle results and your settings (sound, music, enemy-turn speed, fog of war, paint scheme, tips) are stored on your device.</p>
@@ -121,7 +124,59 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
   <h2>Contact</h2>
   <p><a href="mailto:levihopper+panzerkeil@gmail.com">levihopper+panzerkeil@gmail.com</a></p>
 
-  <p class="foot">Last updated 9 November 2026 · <a href="index.html">Support</a></p>
+  <p class="foot">Last updated 17 November 2026 · <a href="index.html">Support</a></p>
 </main>
+<!-- build_site:footer -->
+<section class="signup" id="updates" aria-labelledby="updates-head">
+  <div class="wrap">
+    <div class="signup-copy">
+      <p class="eyebrow">Dispatches from the front</p>
+      <h2 id="updates-head">Be there <em>on day one</em></h2>
+      <p>Leave your email and we’ll write when Panzerkeil comes out, and when a big update lands: new battles, new ways to fight, new ways to lose a unit you love.</p>
+    </div>
+<form class="signup-form" name="updates" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company">
+  <input type="hidden" name="form-name" value="updates">
+  <input type="hidden" name="page" value="privacy">
+  <p class="hp" hidden><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+  <label class="vh" for="email-band">Email address</label>
+  <div class="field"><input id="email-band" type="email" name="email" required autocomplete="email" placeholder="Your email address"><button type="submit">Sign me up</button></div>
+  <p class="fine">One email when it comes out, then only big news. Unsubscribe any time. <a href="privacy.html#updates">Privacy</a></p>
+  <p class="done" role="status" aria-live="polite"></p>
+</form>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Michael Hopper. Panzerkeil is a game about the history of the Second World War.</span>
+    <span><a href="units.html">Your Army</a> · <a href="armoury.html">Armoury</a> · <a href="guide.html">How to Play</a> · <a href="campaigns.html">Campaigns</a> · <a href="leaderboards.html">Leaderboards</a> · <a href="support.html">Help</a> · <a href="privacy.html">Privacy</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.
+  document.querySelectorAll('form[name="updates"]').forEach(function (f) {
+    f.addEventListener("submit", function (e) {
+      if (!window.fetch || !window.URLSearchParams) return;
+      e.preventDefault();
+      var b = f.querySelector("button"), say = f.querySelector(".done");
+      b.disabled = true;
+      say.textContent = "";
+      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                   body: new URLSearchParams(new FormData(f)).toString() })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          f.classList.add("sent");
+          say.textContent = "You’re on the list. We’ll write when there’s news.";
+          if (window.gtag) gtag("event", "sign_up", { method: "updates" });
+        })
+        .catch(function () {
+          b.disabled = false;
+          say.textContent = "That didn’t go through. Please try again in a moment.";
+        });
+    });
+  });
+})();
+</script>
+<!-- /build_site:footer -->
 </body>
 </html>

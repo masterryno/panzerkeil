@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <meta name="theme-color" content="#e9dfc7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1d1a15" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="assets/site.css?v=c6f7d020a4">
+<link rel="stylesheet" href="assets/site.css?v=22b52f3d18">
 <!-- build_site:analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GCEBCT051"></script>
 <script>
@@ -42,7 +42,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <a href="leaderboards.html">Leaderboards</a>
       <a href="support.html">Help</a>
     </div>
-    <a class="nav-cta" href="index.html#free">Play free</a>
+    <a class="nav-cta" href="#updates">Get updates</a>
   </div>
 </nav>
 <!-- /build_site:nav -->
@@ -86,12 +86,56 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 </section>
 </main>
 <!-- build_site:footer -->
+<section class="signup" id="updates" aria-labelledby="updates-head">
+  <div class="wrap">
+    <div class="signup-copy">
+      <p class="eyebrow">Dispatches from the front</p>
+      <h2 id="updates-head">Be there <em>on day one</em></h2>
+      <p>Leave your email and we’ll write when Panzerkeil comes out, and when a big update lands: new battles, new ways to fight, new ways to lose a unit you love.</p>
+    </div>
+<form class="signup-form" name="updates" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company">
+  <input type="hidden" name="form-name" value="updates">
+  <input type="hidden" name="page" value="armoury">
+  <p class="hp" hidden><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+  <label class="vh" for="email-band">Email address</label>
+  <div class="field"><input id="email-band" type="email" name="email" required autocomplete="email" placeholder="Your email address"><button type="submit">Sign me up</button></div>
+  <p class="fine">One email when it comes out, then only big news. Unsubscribe any time. <a href="privacy.html#updates">Privacy</a></p>
+  <p class="done" role="status" aria-live="polite"></p>
+</form>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <span>© 2026 Michael Hopper. Panzerkeil is a game about the history of the Second World War.</span>
     <span><a href="units.html">Your Army</a> · <a href="armoury.html">Armoury</a> · <a href="guide.html">How to Play</a> · <a href="campaigns.html">Campaigns</a> · <a href="leaderboards.html">Leaderboards</a> · <a href="support.html">Help</a> · <a href="privacy.html">Privacy</a></span>
   </div>
 </footer>
+<script>
+(function () {
+  // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.
+  document.querySelectorAll('form[name="updates"]').forEach(function (f) {
+    f.addEventListener("submit", function (e) {
+      if (!window.fetch || !window.URLSearchParams) return;
+      e.preventDefault();
+      var b = f.querySelector("button"), say = f.querySelector(".done");
+      b.disabled = true;
+      say.textContent = "";
+      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                   body: new URLSearchParams(new FormData(f)).toString() })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          f.classList.add("sent");
+          say.textContent = "You’re on the list. We’ll write when there’s news.";
+          if (window.gtag) gtag("event", "sign_up", { method: "updates" });
+        })
+        .catch(function () {
+          b.disabled = false;
+          say.textContent = "That didn’t go through. Please try again in a moment.";
+        });
+    });
+  });
+})();
+</script>
 <!-- /build_site:footer -->
 <script>
 (function () {

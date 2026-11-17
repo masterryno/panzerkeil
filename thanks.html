@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You’re on the list · Panzerkeil</title>
+<meta name="description" content="Thanks for signing up for Panzerkeil news.">
+<meta property="og:title" content="You’re on the list · Panzerkeil">
+<meta property="og:description" content="Thanks for signing up for Panzerkeil news.">
+<meta property="og:image" content="https://panzerkeil.app/assets/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icon-180.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="theme-color" content="#e9dfc7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1d1a15" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="assets/site.css?v=22b52f3d18">
+<!-- build_site:analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GCEBCT051"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted'});
+gtag('consent', 'default', {analytics_storage: 'denied', region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']});
+gtag('js', new Date());
+gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personalization_signals: false});
+</script>
+<script src="https://decisioninsightpartners.com/count.js" defer></script>
+<!-- /build_site:analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- build_site:nav -->
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon-180.png" alt="" width="30" height="30"><span>PANZERKEIL</span></a>
+    <div class="links">
+      <a href="campaigns.html">Campaigns</a>
+      <a href="units.html">Your Army</a>
+      <a href="index.html#battle-mode">Battle Mode</a>
+      <a href="armoury.html">Armoury</a>
+      <a href="leaderboards.html">Leaderboards</a>
+      <a href="support.html">Help</a>
+    </div>
+    <a class="nav-cta" href="index.html#updates">Get updates</a>
+  </div>
+</nav>
+<!-- /build_site:nav -->
+<main id="main">
+<header class="page-head">
+  <div class="wrap">
+    <p class="kicker">Dispatches from the front</p>
+    <h1>You’re on the list</h1>
+    <div class="rule"></div>
+    <p class="lede">Thank you. We’ll write when Panzerkeil comes out, and when a big update lands. Nothing else.</p>
+    <p><a href="index.html">Back to Panzerkeil</a> · <a href="campaigns.html">The campaigns</a> · <a href="units.html">Your Army</a></p>
+  </div>
+</header>
+</main>
+<!-- build_site:footer -->
+<footer>
+  <div class="wrap">
+    <span>© 2026 Michael Hopper. Panzerkeil is a game about the history of the Second World War.</span>
+    <span><a href="units.html">Your Army</a> · <a href="armoury.html">Armoury</a> · <a href="guide.html">How to Play</a> · <a href="campaigns.html">Campaigns</a> · <a href="leaderboards.html">Leaderboards</a> · <a href="support.html">Help</a> · <a href="privacy.html">Privacy</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.
+  document.querySelectorAll('form[name="updates"]').forEach(function (f) {
+    f.addEventListener("submit", function (e) {
+      if (!window.fetch || !window.URLSearchParams) return;
+      e.preventDefault();
+      var b = f.querySelector("button"), say = f.querySelector(".done");
+      b.disabled = true;
+      say.textContent = "";
+      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                   body: new URLSearchParams(new FormData(f)).toString() })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          f.classList.add("sent");
+          say.textContent = "You’re on the list. We’ll write when there’s news.";
+          if (window.gtag) gtag("event", "sign_up", { method: "updates" });
+        })
+        .catch(function () {
+          b.disabled = false;
+          say.textContent = "That didn’t go through. Please try again in a moment.";
+        });
+    });
+  });
+})();
+</script>
+<!-- /build_site:footer -->
+
+</body>
+</html>
