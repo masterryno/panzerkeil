@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/site.css?v=22b52f3d18">
+<link rel="stylesheet" href="assets/site.css?v=a5a9c14900">
 <title>Panzerkeil Help</title>
 <meta name="description" content="Help and contact for Panzerkeil, a turn-based WWII hex wargame for iPhone and iPad.">
 <link rel="icon" href="assets/icon-180.png">
@@ -52,7 +52,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <a href="leaderboards.html">Leaderboards</a>
       <a href="support.html" aria-current="page">Help</a>
     </div>
-    <a class="nav-cta" href="#updates">Get updates</a>
+    <a class="nav-cta" href="index.html#beta" data-beta="nav">Play the beta</a>
   </div>
 </nav>
 <!-- /build_site:nav -->
@@ -166,6 +166,12 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 </footer>
 <script>
 (function () {
+  // Who goes to the beta, and from where.
+  document.querySelectorAll("[data-beta]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (window.gtag) gtag("event", "beta_click", { place: a.getAttribute("data-beta") });
+    });
+  });
   // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.
   document.querySelectorAll('form[name="updates"]').forEach(function (f) {
     f.addEventListener("submit", function (e) {

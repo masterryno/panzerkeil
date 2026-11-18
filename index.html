@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <meta name="theme-color" content="#0f0e0b">
 <link rel="preload" as="image" href="assets/home/hero-4.jpg" imagesrcset="assets/home/hero-s-4.jpg 1100w, assets/home/hero-4.jpg 2400w" imagesizes="100vw">
-<link rel="stylesheet" href="assets/site.css?v=22b52f3d18">
+<link rel="stylesheet" href="assets/site.css?v=a5a9c14900">
 <script>document.documentElement.classList.add("js")</script>
 <!-- build_site:analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GCEBCT051"></script>
@@ -44,7 +44,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
       <a href="leaderboards.html">Leaderboards</a>
       <a href="support.html">Help</a>
     </div>
-    <a class="nav-cta" href="#updates">Get updates</a>
+    <a class="nav-cta" href="#beta" data-beta="nav">Play the beta</a>
   </div>
 </nav>
 <!-- /build_site:nav -->
@@ -63,12 +63,13 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     <p class="tagline">Build an army of your own. <em>Lead it through the war.</em></p>
     <p class="say">A turn-based hex wargame across <span data-gen="battles">48</span> battles on hand-drawn maps, made for the phone in your hand and the iPad on your desk.</p>
     <div class="ctas">
+      <a class="beta-btn" href="https://testflight.apple.com/join/JGwePuaw" data-beta="hero" rel="noopener">Play the free beta</a>
       <span class="store">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
         <span><small>Coming Q1 2027 to the</small>App Store</span>
       </span>
     </div>
-    <p class="ask">Expected Q1 2027 · Get word the day it comes out</p>
+    <p class="ask">Beta open now · Out Q1 2027 · Or get word the day it comes out</p>
 <!-- build_site:hero-signup -->
 <form class="signup-form" name="updates" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company">
   <input type="hidden" name="form-name" value="updates">
@@ -87,9 +88,34 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 <div class="numbers" role="list">
   <div role="listitem"><strong><span data-gen="battles">48</span></strong><small>Battles</small></div>
   <div role="listitem"><strong><span data-gen="campaigns">3</span></strong><small>Campaigns</small></div>
-  <div role="listitem"><strong><span data-gen="units">126</span></strong><small>Unit types</small></div>
+  <div role="listitem"><strong><span data-gen="units">130</span></strong><small>Unit types</small></div>
   <div role="listitem"><strong>4</strong><small>Screens</small></div>
 </div>
+
+<!-- The public beta -->
+<section class="beta" id="beta" aria-labelledby="beta-head">
+  <div class="wrap beta-grid">
+    <div class="reveal">
+      <p class="eyebrow">Free beta · open now</p>
+      <h2 class="big" id="beta-head">Play it <em>now</em>.</h2>
+      <p class="note">The beta is open on iPhone, iPad, Mac and Apple TV, with every battle unlocked while it lasts. Play it, tell us what works and what doesn’t, and help shape the game before it comes out.</p>
+      <ol class="steps">
+        <li>Tap <b>Play the free beta</b>. Apple’s TestFlight page opens.</li>
+        <li>Get <b>TestFlight</b>, Apple’s free app for trying games early, if you don’t have it yet.</li>
+        <li>Tap <b>Accept</b>, then <b>Install</b>. New versions arrive by themselves.</li>
+      </ol>
+      <p class="where">iPhone &amp; iPad (iOS 17 or later) · Mac · Apple TV: accept on your iPhone, then open TestFlight on the TV</p>
+      <div class="ctas">
+        <a class="beta-btn" href="https://testflight.apple.com/join/JGwePuaw" data-beta="section" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>Play the free beta</a>
+      </div>
+      <p class="note">Your campaigns carry over to the App Store version. The full game is unlocked only during the beta: at launch, The Whole War is a purchase like any other. Places are limited.</p>
+    </div>
+    <div class="qr-card reveal">
+      <img src="assets/home/beta-qr-1.png" width="220" height="220" alt="QR code for the Panzerkeil beta on TestFlight">
+      <p>On a computer? Scan with your iPhone’s camera.</p>
+    </div>
+  </div>
+</section>
 
 <!-- Free to start -->
 <section class="free" id="free">
@@ -374,7 +400,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     </div>
     <div class="box-grid">
       <div class="reveal"><img src="assets/home/u-ger_panther-4.png" alt="" loading="lazy"><p><b>Three campaigns, <span data-gen="battles">48</span> battles</b><small>Branching roads through the war</small></p></div>
-      <div class="reveal"><img src="assets/home/u-sov_katyusha-4.png" alt="" loading="lazy"><p><b><span data-gen="units">126</span> illustrated unit types</b><small>From cavalry to jet fighters</small></p></div>
+      <div class="reveal"><img src="assets/home/u-sov_katyusha-4.png" alt="" loading="lazy"><p><b><span data-gen="units">130</span> illustrated unit types</b><small>From cavalry to jet fighters</small></p></div>
       <div class="reveal"><img src="assets/home/u-brit_churchill-4.png" alt="" loading="lazy"><p><b>Battle Mode</b><small>Your own army against other players, under fog of war</small></p></div>
       <div class="reveal"><img src="assets/home/u-brit_spitfire-4.png" alt="" loading="lazy"><p><b>Game Center matches</b><small>Turn by turn, with chat and rematches</small></p></div>
       <div class="reveal"><img src="assets/home/u-brit_infantry_43-4.png" alt="" loading="lazy"><p><b>Unit cards and stamps</b><small>Traits, hardships, <span data-gen="medals-word">nine</span> medals and the Roll of Honour</small></p></div>
@@ -445,6 +471,12 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
 </footer>
 <script>
 (function () {
+  // Who goes to the beta, and from where.
+  document.querySelectorAll("[data-beta]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (window.gtag) gtag("event", "beta_click", { place: a.getAttribute("data-beta") });
+    });
+  });
   // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.
   document.querySelectorAll('form[name="updates"]').forEach(function (f) {
     f.addEventListener("submit", function (e) {
