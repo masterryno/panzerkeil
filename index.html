@@ -64,7 +64,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     <p class="say">A turn-based hex wargame across <span data-gen="battles">48</span> battles on hand-drawn maps, made for the phone in your hand and the iPad on your desk.</p>
     <div class="ctas">
       <a class="beta-btn" href="https://testflight.apple.com/join/JGwePuaw" data-beta="hero" rel="noopener">Play the free beta</a>
-      <a class="btn-ghost" href="#trailer"><span class="play" aria-hidden="true"></span>Watch the trailer</a>
+      <a class="btn-ghost" href="#trailer"><span class="play" aria-hidden="true"></span>Watch it played</a>
       <span class="store">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
         <span><small>Coming Q1 2027 to the</small>App Store</span>
@@ -93,20 +93,20 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
   <div role="listitem"><strong>4</strong><small>Screens</small></div>
 </div>
 
-<!-- The trailer -->
+<!-- Thirty seconds of gameplay -->
 <section class="trailer" id="trailer" aria-labelledby="trailer-head">
   <div class="wrap">
     <div class="head reveal">
-      <p class="eyebrow">The trailer</p>
-      <h2 class="mid" id="trailer-head">Every war begins <em>with hope</em></h2>
-      <p class="say">Thirty seconds of the war in Normandy, all of it filmed in the game.</p>
+      <p class="eyebrow">Gameplay · 30 seconds</p>
+      <h2 class="mid" id="trailer-head">See it <em>played</em></h2>
+      <p class="say">Three fronts, German, Soviet and Allied, with the game’s own music and sound. All of it played in the game.</p>
     </div>
     <div class="tv" id="trailer-tv">
-      <video controls playsinline preload="none" poster="assets/home/trailer-poster-1.jpg" width="1920" height="1080"
-             aria-label="The Panzerkeil trailer, 30 seconds, with captions">
-        <source src="assets/home/trailer-1.mp4" type="video/mp4">
+      <video controls playsinline preload="none" poster="assets/home/gameplay-30-poster-1.jpg" width="1920" height="1080"
+             aria-label="Thirty seconds of Panzerkeil gameplay">
+        <source src="assets/home/gameplay-30-1.mp4" type="video/mp4">
       </video>
-      <button class="tv-play" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Play the trailer</button>
+      <button class="tv-play" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Play the video</button>
     </div>
   </div>
   <script>
@@ -117,7 +117,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     b.addEventListener("click", function () { v.controls = true; v.play(); });
     v.addEventListener("play", function () {
       tv.classList.add("playing"); v.controls = true;
-      if (window.gtag) gtag("event", "trailer_play");
+      if (window.gtag) gtag("event", "gameplay_play");
     }, { once: true });
   })();
   </script>
