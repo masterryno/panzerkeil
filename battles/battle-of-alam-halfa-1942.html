@@ -12,6 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- build_site:seo -->
 <link rel="canonical" href="https://panzerkeil.app/battles/battle-of-alam-halfa-1942.html">
+<meta name="apple-itunes-app" content="app-id=6824960905">
 <meta property="og:url" content="https://panzerkeil.app/battles/battle-of-alam-halfa-1942.html">
 <meta property="og:site_name" content="Panzerkeil">
 <meta property="og:locale" content="en_GB">
@@ -125,7 +126,7 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
     <div class="signup-copy">
       <p class="eyebrow">Dispatches from the front</p>
       <h2 id="updates-head">Be there <em>on day one</em></h2>
-      <p>Panzerkeil is expected in the first quarter of 2027. Leave your email and we’ll write the day it comes out, and when a big update lands: new battles, new ways to fight, new ways to lose a unit you love.</p>
+      <p>Panzerkeil comes out on 15 January 2027, and you can <a href="https://apps.apple.com/app/panzerkeil/id6824960905" data-store="band" rel="noopener">pre-order it on the App Store</a> now. Leave your email and we’ll write the day it comes out, and when a big update lands: new battles, new ways to fight, new ways to lose a unit you love.</p>
     </div>
 <form class="signup-form" name="updates" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company">
   <input type="hidden" name="form-name" value="updates">
@@ -150,6 +151,12 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
   document.querySelectorAll("[data-beta]").forEach(function (a) {
     a.addEventListener("click", function () {
       if (window.gtag) gtag("event", "beta_click", { place: a.getAttribute("data-beta") });
+    });
+  });
+  // And who goes to the App Store page.
+  document.querySelectorAll("[data-store]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (window.gtag) gtag("event", "store_click", { place: a.getAttribute("data-store") });
     });
   });
   // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.

@@ -12,6 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- build_site:seo -->
 <meta name="robots" content="noindex, follow">
+<meta name="apple-itunes-app" content="app-id=6824960905">
 <!-- /build_site:seo -->
 <link rel="icon" href="assets/icon-180.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
@@ -73,6 +74,12 @@ gtag('config', 'G-5GCEBCT051', {allow_google_signals: false, allow_ad_personaliz
   document.querySelectorAll("[data-beta]").forEach(function (a) {
     a.addEventListener("click", function () {
       if (window.gtag) gtag("event", "beta_click", { place: a.getAttribute("data-beta") });
+    });
+  });
+  // And who goes to the App Store page.
+  document.querySelectorAll("[data-store]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (window.gtag) gtag("event", "store_click", { place: a.getAttribute("data-store") });
     });
   });
   // Sign-ups go to Netlify Forms; with script, the page stays put and says thanks.
